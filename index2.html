@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="PlumServe Home 2 – Professional plumbing solutions with rapid response and expert care." />
+    <title>PlumServe – Home 2 | Premium Plumbing Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <style>
+        /* ── HOME 2 PREMIUM SPECIFIC STYLES ── */
+        body { background: var(--navy); }
+        
+        .h2-layout * { box-sizing: border-box; }
+
+        /* Fix Navbar Contrast for Light Mode in Home 2 (since hero is light) */
+        html[data-theme="light"] #header:not(.scrolled) .nav-link {
+            color: #0f172a;
+        }
+        html[data-theme="light"] #header:not(.scrolled) .logo-text {
+            --logo-color-1: #0f172a;
+            --logo-color-2: #334155;
+        }
+        html[data-theme="light"] #header:not(.scrolled) .globe-btn,
+        html[data-theme="light"] #header:not(.scrolled) .theme-btn,
+        html[data-theme="light"] #header:not(.scrolled) .hamburger {
+            color: #0f172a !important;
+            background: rgba(0, 0, 0, 0.05) !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        }
+
+
+        /* Asymmetric Hero */
+        .h2-hero {
+            position: relative;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--navy);
+            overflow: hidden;
+            padding-top: var(--header-h);
+        }
+        
+        @media (max-width: 1024px) {
+            .h2-hero { grid-template-columns: 1fr; }
+        }
+
+        .h2-hero-content {
+            padding: 80px 6vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .h2-hero-visual {
+            position: relative;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .h2-hero-img-wrap {
+            width: 100%;
+            height: 100%;
+            border-radius: 40px 0 0 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: -20px 20px 60px rgba(0,0,0,0.5);
+        }
+        @media (max-width: 1024px) {
+            .h2-hero-visual { display: none; }
+        }
+
+        .h2-hero-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+            transition: transform 10s ease;
+        }
+        .h2-hero-img-wrap:hover img {
+            transform: scale(1.05);
+        }
+
+        .h2-hero-title {
+            font-family: 'Bebas Neue', var(--font-heading);
+            font-size: clamp(3rem, 12vw, 7rem);
+            line-height: 0.9;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            color: var(--white);
+            text-transform: uppercase;
+            overflow-wrap: break-word;
+        }
+
+        .h2-hero-title span {
+            color: transparent;
+            -webkit-text-stroke: 2px var(--gold);
+        }
+
+        .h2-glass-panel {
+            background: var(--navy-card);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--navy-light);
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 40px;
+            max-width: 500px;
+            box-shadow: var(--shadow-card);
+            position: relative;
+        }
+        
+        .h2-glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,107,0,0.5), transparent);
+        }
+
+        /* Hero Booking Form */
+        .h2-quick-book { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+        .h2-input-group { position: relative; }
+        .h2-input-group input, .h2-input-group select {
+            width: 100%; padding: 16px 20px;
+            background: var(--navy);
+            border: 1px solid var(--navy-light);
+            border-radius: 12px;
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 15px;
+            transition: var(--transition);
+        }
+        .h2-input-group input:focus, .h2-input-group select:focus {
+            outline: none; border-color: var(--gold);
+            background: var(--navy-mid);
+        }
+        .h2-input-group select { appearance: none; cursor: pointer; }
+        .h2-glass-btn {
+            background: var(--gold); color: var(--navy);
+            border: none; padding: 18px; border-radius: 12px;
+            font-family: var(--font-heading); font-weight: 700;
+            font-size: 16px; text-transform: uppercase; letter-spacing: 1px;
+            cursor: pointer; transition: var(--transition);
+        }
+        .h2-glass-btn:hover {
+            box-shadow: 0 0 20px rgba(255,107,0,0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Marquee Strip */
+        .h2-marquee-wrap {
+            padding: 24px 0; background: var(--gold);
+            overflow: hidden; display: flex; align-items: center;
+            transform: rotate(-2deg); margin: 40px -20px;
+            width: calc(100% + 40px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            z-index: 10; position: relative;
+        }
+        .h2-marquee-content {
+            display: flex; gap: 40px; white-space: nowrap;
+            animation: h2-scroll 20s linear infinite;
+        }
+        .h2-marquee-item {
+            font-family: 'Rajdhani', sans-serif; font-size: 1.5rem;
+            font-weight: 800; color: var(--navy); text-transform: uppercase;
+            letter-spacing: 2px; display: flex; align-items: center; gap: 20px;
+        }
+        @keyframes h2-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        @media (max-width: 480px) {
+            .h2-marquee-wrap {
+                margin: 40px -10px;
+                width: calc(100% + 20px);
+                padding: 16px 0;
+            }
+            .h2-marquee-item {
+                font-size: 1.1rem;
+                gap: 15px;
+            }
+            
+            .h2-hero-title {
+                font-size: clamp(2.2rem, 14vw, 3.5rem);
+                word-break: normal;
+                overflow-wrap: break-word;
+                line-height: 1.1;
+                margin-bottom: 20px;
+            }
+
+            .h2-hero {
+                padding: 100px 0 60px;
+            }
+
+            .h2-glass-panel {
+                padding: 30px 20px;
+                margin-top: 30px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .h2-hero-title {
+                font-size: 2.1rem !important;
+            }
+            .h2-hero-content {
+                padding: 0 15px;
+            }
+        }
+
+        /* Bento Grid V2 */
+        .h2-bento-section { padding: 120px 0; background: var(--navy-mid); }
+        .h2-bento-grid {
+            display: grid; gap: 24px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 280px;
+            max-width: 1400px; margin: 0 auto; padding: 0 24px;
+        }
+        @media (max-width: 1024px) {
+            .h2-bento-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .h2-layout .h2-bento-grid { 
+                grid-template-columns: 1fr !important; 
+                grid-auto-rows: auto !important; 
+                gap: 20px !important;
+                padding: 0 20px !important;
+            }
+            .h2-layout .b-span-2x2, 
+            .h2-layout .b-span-2x1 { 
+                grid-column: span 1 !important; 
+                grid-row: span 1 !important; 
+            }
+            .h2-layout .h2-bento-card {
+                min-height: 280px !important;
+                padding: 24px !important;
+            }
+            .h2-layout .h2-bento-card-title {
+                font-size: 1.5rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .h2-layout .testimonials-track {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+            .h2-layout .testi-card {
+                flex: none !important;
+                width: 100% !important;
+                padding: 24px !important;
+            }
+            .h2-layout .slider-controls {
+                display: none !important;
+            }
+            .h2-perks-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+                padding: 0 20px !important;
+            }
+        }
+        .h2-bento-card {
+            border-radius: 30px; position: relative; overflow: hidden;
+            background: var(--navy-card); border: 1px solid var(--navy-light);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 32px;
+            transition: var(--transition);
+        }
+        .h2-bento-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .h2-bento-card img {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: 0; opacity: 0.5; transition: 0.8s ease;
+        }
+        .h2-bento-card:hover img { opacity: 0.8; transform: scale(1.05); }
+        .h2-bento-card::after {
+            content:''; position: absolute; inset: 0;
+            background: linear-gradient(to top, var(--navy) 10%, transparent 80%); z-index: 1;
+        }
+        .h2-bento-card-content { position: relative; z-index: 2; }
+        .h2-bento-card-title {
+            font-family: var(--font-heading); font-size: 2rem; font-weight: 700; margin-bottom: 8px;
+            line-height: 1.1;
+        }
+        .h2-bento-card-desc {
+            color: var(--gray); font-size: 0.95rem; max-height: 0; opacity: 0; overflow: hidden;
+            transition: all 0.4s ease; margin-bottom: 0;
+        }
+        .h2-bento-card:hover .h2-bento-card-desc { max-height: 100px; opacity: 1; margin-top: 10px; margin-bottom: 10px; }
+        
+        .b-span-2x2 { grid-column: span 2; grid-row: span 2; }
+        .b-span-2x1 { grid-column: span 2; grid-row: span 1; }
+
+        /* Sticky Process Section */
+        .h2-process-section { padding: 120px 0; background: var(--navy); }
+        .h2-process-container {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            max-width: 1280px; margin: 0 auto; padding: 0 24px;
+        }
+        @media (max-width: 900px) {
+            .h2-process-container { grid-template-columns: 1fr; }
+        }
+        .h2-process-sticky { position: sticky; top: 120px; height: max-content; }
+        .h2-process-title {
+            font-family: var(--font-heading); font-size: clamp(3rem, 5vw, 4rem); line-height: 1; font-weight: 800; margin-bottom: 24px;
+        }
+        .h2-process-title span { color: var(--gold); }
+        .h2-step-card {
+            background: var(--navy-card); border: 1px solid var(--navy-light);
+            border-radius: 20px; padding: 40px; margin-bottom: 24px;
+            position: relative; overflow: hidden; transition: var(--transition);
+        }
+        .h2-step-card::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--gold);
+            transform: scaleY(0); transform-origin: top; transition: transform 0.4s ease;
+        }
+        .h2-step-card:hover::before { transform: scaleY(1); }
+        .h2-step-num {
+            font-family: 'Bebas Neue', var(--font-heading); font-size: 5rem;
+            color: var(--navy-light); position: absolute; right: 20px; top: 10px; line-height: 1;
+            opacity: 0.3;
+        }
+        .h2-step-title { font-size: 1.8rem; font-family: var(--font-heading); font-weight: 700; margin-bottom: 12px; position:relative; z-index: 2; }
+        .h2-step-desc { color: var(--gray); font-size: 1rem; line-height: 1.7; position:relative; z-index: 2; }
+
+        /* Dynamic Testimonials */
+        .h2-testi-section { padding: 120px 0; background: var(--navy-mid); overflow: hidden; }
+        .h2-testi-track {
+            display: flex; gap: 30px; padding: 0 40px; animation: h2-scroll-slow 40s linear infinite;
+            width: max-content;
+        }
+        .h2-testi-card {
+            width: 450px; background: var(--navy-card); border: 1px solid var(--navy-light);
+            border-radius: 24px; padding: 40px; backdrop-filter: blur(10px);
+            display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+            white-space: normal; flex-shrink: 0;
+        }
+        @media(max-width: 600px){ .h2-testi-card { width: 320px; padding: 30px;} }
+        .h2-testi-card p { font-size: 1.1rem; color: var(--off-white); font-style: italic; line-height: 1.6; }
+        .h2-testi-author { display: flex; align-items: center; gap: 16px; }
+        .h2-testi-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--gold); display: flex; align-items:center; justify-content:center; font-weight: bold; color: var(--navy); font-family: var(--font-heading); flex-shrink:0;}
+        @keyframes h2-scroll-slow {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 15px)); }
+        }
+
+        @media (max-width: 480px) {
+            .h2-layout .h2-testi-track {
+                flex-direction: column !important;
+                animation: none !important;
+                width: 100% !important;
+                padding: 0 20px !important;
+                gap: 20px !important;
+                transform: none !important;
+            }
+            .h2-layout .h2-testi-card {
+                width: 100% !important;
+            }
+            /* Hide the duplicate testimonial group on mobile as animation is disabled */
+            .h2-layout .h2-testi-track > .h2-testi-card:nth-child(n+5) {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════
+    HEADER
+    ════════════════════════════════════════ -->
+    <header id="header">
+        <div class="header-inner">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient)"/>
+                        <defs>
+                            <linearGradient id="droplet-gradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff9142"/>
+                                <stop offset="1" stop-color="#cc5600"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Plum<span>Serve</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="main-nav" aria-label="Main navigation">
+
+                <!-- Home Dropdown -->
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Home <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="index.html">Home 1 (Residential)</a>
+                        <a href="index2.html">Home 2 (Commercial)</a>
+                    </div>
+                </div>
+
+                <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+                <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+
+                <!-- Dashboards Dropdown -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Dashboards <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="dashboard-user.html">User Dashboard</a>
+                        <a href="dashboard-admin.html">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Right: Globe -->
+            <div class="header-actions">
+                <div class="header-auth-links" style="display:flex; gap:15px; align-items:center;">
+                    <a href="login.html" class="nav-link" style="padding:0; text-transform:uppercase; font-size:13px; font-weight:600; letter-spacing:1px;">Sign In</a>
+                    <a href="signup.html" class="nav-link nav-signup" style="padding:0; text-transform:uppercase; font-size:13px; font-weight:600; letter-spacing:1px;">Sign Up</a>
+                </div>
+                
+                <button class="theme-btn" id="theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <ellipse cx="12" cy="12" rx="4" ry="10" />
+                        <line x1="2" y1="9" x2="22" y2="9" />
+                        <line x1="2" y1="15" x2="22" y2="15" />
+                    </svg>
+                    <span class="dir-label" id="dir-label">LTR</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link active" data-toggle="#mob-home-dd">Home <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-home-dd">
+                <a href="index.html">Home 1</a>
+                <a href="index2.html" class="active">Home 2</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
+        <div class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></div>
+
+        <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></div>
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link" data-toggle="#mob-dash-dd">Dashboards <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-dash-dd">
+                <a href="dashboard-user.html">User Dashboard</a>
+                <a href="dashboard-admin.html">Admin Dashboard</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item"><a href="login.html" class="mobile-nav-link">Sign In</a></div>
+        <div class="mobile-nav-item"><a href="signup.html" class="mobile-nav-link">Sign Up</a></div>
+    </nav>
+
+    <!-- ════════════════════════════════════════
+    HOME 2 SPECIFIC CONTENT (ASYMMETRIC)
+    ════════════════════════════════════════ -->
+    <main class="h2-layout">
+        
+        <!-- === ASYMMETRIC HERO === -->
+        <section class="h2-hero">
+            <div class="h2-hero-content reveal">
+                <div class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); width: max-content;">
+                    <i class="fa-solid fa-bolt" style="color:var(--gold); margin-right:6px;"></i> Premium Commercial Class
+                </div>
+                <h1 class="h2-hero-title">
+                    ENGINEERING<br/>
+                    <span>PERFECT FLOW</span>
+                </h1>
+                <p style="color: var(--gray); font-size: 1.1rem; max-width: 480px; margin-bottom: 24px; line-height: 1.6;">
+                    Elite plumbing solutions engineered specifically for modern estates and commercial complexes. We merge technical precision with rapid response protocols.
+                </p>
+                
+                <!-- Glassmorphic Booking Panel -->
+                <div class="h2-glass-panel">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 8px;">Priority Dispatch</h3>
+                    <p style="color: var(--gray); font-size: 0.95rem;">Secure a master technician within 60 minutes.</p>
+                    
+                    <form class="h2-quick-book" action="contact.html">
+                        <div class="h2-input-group">
+                            <select required aria-label="Service Required">
+                                <option value="" disabled selected>Select Service Required</option>
+                                <option value="emergency">Emergency Repair</option>
+                                <option value="install">System Installation</option>
+                                <option value="detect">Leak Detection</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 20px; top: 18px; color: var(--gold); pointer-events: none;"></i>
+                        </div>
+                        <div class="h2-input-group">
+                            <input type="text" placeholder="Your Location / Zip Code" required>
+                        </div>
+                        <button type="submit" class="h2-glass-btn">Request Immediate Dispatch</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="h2-hero-visual reveal from-right">
+                <div class="h2-hero-img-wrap">
+                    <img src="assets/images/freepik__emergency-plumber-repairing-burst-pipe-in-a-home-w__58423.png" alt="Premium Plumbing Infrastructure">
+                </div>
+            </div>
+        </section>
+
+        <!-- === MARQUEE === -->
+        <div class="h2-marquee-wrap">
+            <div class="h2-marquee-content">
+                <div class="h2-marquee-item"><span>✦</span> 24/7 EMERGENCY RESPONSE</div>
+                <div class="h2-marquee-item"><span>✦</span> MASTER CERTIFIED</div>
+                <div class="h2-marquee-item"><span>✦</span> LIFETIME WARRANTY</div>
+                <div class="h2-marquee-item"><span>✦</span> UPFRONT PRICING</div>
+                <div class="h2-marquee-item"><span>✦</span> 24/7 EMERGENCY RESPONSE</div>
+                <div class="h2-marquee-item"><span>✦</span> MASTER CERTIFIED</div>
+                <div class="h2-marquee-item"><span>✦</span> LIFETIME WARRANTY</div>
+                <div class="h2-marquee-item"><span>✦</span> UPFRONT PRICING</div>
+            </div>
+        </div>
+
+        <!-- === BENTO GRID V2 === -->
+        <section class="h2-bento-section">
+            <div class="container text-center" style="margin-bottom: 60px;">
+                <span class="section-tag">Core Capabilities</span>
+                <h2 class="section-title">Master <span>Solutions</span></h2>
+            </div>
+            
+            <div class="h2-bento-grid">
+                <!-- Large Item -->
+                <div class="h2-bento-card b-span-2x2 reveal">
+                    <img src="assets/images/freepik__professional-plumber-inspecting-water-leak-in-resi__58420.png" alt="Advanced Diagnostics">
+                    <div class="h2-bento-card-content">
+                        <div class="h2-bento-card-title">Commercial Infrastructure</div>
+                        <p class="h2-bento-card-desc">High-capacity pumping stations, central heating circuits, and commercial-grade wastewater management designed for 99.9% uptime.</p>
+                        <a href="services.html" class="btn-outline" style="margin-top: 20px; padding: 10px 24px; font-size: 14px;">View Enterprise Specs</a>
+                    </div>
+                </div>
+                
+                <!-- Normal Items -->
+                <div class="h2-bento-card reveal reveal-delay-1">
+                    <img src="assets/images/freepik__professional-plumber-installing-a-modern-water-hea__58422.png" alt="Water Heater">
+                    <div class="h2-bento-card-content">
+                        <div class="h2-bento-card-title">Thermal Systems</div>
+                        <p class="h2-bento-card-desc">Tankless hybrid water heaters and smart thermostats that reduce energy footprints.</p>
+                        <a href="services.html" class="btn-outline" style="margin-top: 10px; padding: 6px 16px; font-size: 12px;">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="h2-bento-card reveal reveal-delay-2">
+                    <img src="assets/images/freepik__plumber-cleaning-a-clogged-drain-pipe-in-a-bathroo__58421.png" alt="Pipes">
+                    <div class="h2-bento-card-content">
+                        <div class="h2-bento-card-title">Acoustic Logic</div>
+                        <p class="h2-bento-card-desc">Non-invasive leak detection using ultra-sensitive acoustic sensors pinpointing micro-fractures.</p>
+                        <a href="services.html" class="btn-outline" style="margin-top: 10px; padding: 6px 16px; font-size: 12px;">Explore</a>
+                    </div>
+                </div>
+                
+                <!-- Wide Item -->
+                <div class="h2-bento-card b-span-2x1 reveal reveal-delay-1">
+                    <img src="assets/images/freepik__professional-plumbing-tools-arranged-on-workbench-__58424.png" alt="Hydro Jetting">
+                    <div class="h2-bento-card-content">
+                        <div class="h2-bento-card-title">Pure-Flow Hydro Jetting</div>
+                        <p class="h2-bento-card-desc">High-pressure clearing for resilient drainage systems, eradicating 100% of pipeline blockages, root intrusions, and heavy calcification.</p>
+                        <a href="services.html" class="btn-outline" style="margin-top: 20px; padding: 10px 24px; font-size: 14px;">See It In Action</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === STICKY PROCESS === -->
+        <section class="h2-process-section">
+            <div class="h2-process-container">
+                <div class="h2-process-left reveal">
+                    <div class="h2-process-sticky">
+                        <span class="section-tag">Methodology</span>
+                        <h2 class="h2-process-title">The PlumServe <span>Architecture</span></h2>
+                        <p style="color: var(--gray); font-size: 1.1rem; line-height: 1.8; max-width: 400px; margin-bottom: 30px;">
+                            We don't guess. We diagnose, engineer, and resolve. Experience a transparent workflow designed around precision and client trust from the moment you call to final verification.
+                        </p>
+                        <a href="about.html" class="btn-primary">Our Legacy</a>
+                    </div>
+                </div>
+                
+                <div class="h2-process-right">
+                    <div class="h2-step-card reveal from-right">
+                        <span class="h2-step-num">01</span>
+                        <h3 class="h2-step-title">Rapid Assessment</h3>
+                        <p class="h2-step-desc">Within 60 minutes, our master technicians arrive fully equipped. We utilize thermal imaging and acoustic sensors to map the hidden infrastructure and identify the root cause instantly without destructive and invasive drilling.</p>
+                    </div>
+                    
+                    <div class="h2-step-card reveal from-right">
+                        <span class="h2-step-num">02</span>
+                        <h3 class="h2-step-title">Transparent Logic</h3>
+                        <p class="h2-step-desc">You are provided with a complete visual diagnostic report alongside a flat-rate upfront cost. We explain the engineering logic behind the proposed solution so you understand exactly what you are investing in.</p>
+                    </div>
+                    
+                    <div class="h2-step-card reveal from-right">
+                        <span class="h2-step-num">03</span>
+                        <h3 class="h2-step-title">Precision Execution</h3>
+                        <p class="h2-step-desc">Our protocol dictates the use of industry-leading materials. From copper crimping to hydro-jetting, every action is meticulously performed to exceed local building safety codes and ensure total system integrity.</p>
+                    </div>
+                    
+                    <div class="h2-step-card reveal from-right">
+                        <span class="h2-step-num">04</span>
+                        <h3 class="h2-step-title">Shield Verification</h3>
+                        <p class="h2-step-desc">Before demobilizing, we run a rigorous pressure and flow stress test. Once verified, the repair is covered by our lifetime labor warranty, giving you permanent operational peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === HORIZONTAL TESTIMONIALS === -->
+        <section class="h2-testi-section">
+            <div class="container text-center" style="margin-bottom: 60px;">
+                <span class="section-tag">Client Reputation</span>
+                <h2 class="section-title">Wall of <span>Trust</span></h2>
+            </div>
+            
+            <div class="h2-testi-track">
+                <!-- Group 1 -->
+                <div class="h2-testi-card">
+                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <p>"The priority dispatch was phenomenal. A team arrived in 40 minutes for our flooded basement. Absolute lifesavers with unmatched professionalism and completely transparent pricing."</p>
+                    <div class="h2-testi-author">
+                        <div class="h2-testi-avatar">JD</div>
+                        <div>
+                            <strong style="display:block; font-family:var(--font-heading); font-size: 1.1rem;">John Davis</strong>
+                            <span style="color:var(--gray); font-size: 0.9rem;">Private Estate Manager</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="h2-testi-card">
+                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <p>"We transitioned our entire hotel chain's maintenance to PlumServe. Their acoustic leak detection saved us thousands in potential water damage and prevented invasive wall tear-downs."</p>
+                    <div class="h2-testi-author">
+                        <div class="h2-testi-avatar">AW</div>
+                        <div>
+                            <strong style="display:block; font-family:var(--font-heading); font-size: 1.1rem;">Alice Wong</strong>
+                            <span style="color:var(--gray); font-size: 0.9rem;">Director of Operations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="h2-testi-card">
+                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <p>"They installed a new hybrid thermal system for us. The automated options made it easy to optimize energy usage. The installation looks like a spaceship engine room and runs flawlessly."</p>
+                    <div class="h2-testi-author">
+                        <div class="h2-testi-avatar">MK</div>
+                        <div>
+                            <strong style="display:block; font-family:var(--font-heading); font-size: 1.1rem;">Mark Knight</strong>
+                            <span style="color:var(--gray); font-size: 0.9rem;">Commercial Architect</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="h2-testi-card">
+                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <p>"Zero hidden fees. The transparent engineering step they do before starting work is something every contractor should adopt. Honest, elite service that respects the client's time."</p>
+                    <div class="h2-testi-author">
+                        <div class="h2-testi-avatar">EL</div>
+                        <div>
+                            <strong style="display:block; font-family:var(--font-heading); font-size: 1.1rem;">Emma Lewis</strong>
+                            <span style="color:var(--gray); font-size: 0.9rem;">Property Developer</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Group 2 (Duplicate for infinity scroll) -->
+                <div class="h2-testi-card">
+                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <p>"The priority dispatch was phenomenal. A team arrived in 40 minutes for our flooded basement. Absolute lifesavers with unmatched professionalism and completely transparent pricing."</p>
+                    <div class="h2-testi-author">
+                        <div class="h2-testi-avatar">JD</div>
+                        <div>
+                            <strong style="display:block; font-family:var(--font-heading); font-size: 1.1rem;">John Davis</strong>
+                            <span style="color:var(--gray); font-size: 0.9rem;">Private Estate Manager</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="h2-testi-card">
+                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <p>"We transitioned our entire hotel chain's maintenance to PlumServe. Their acoustic leak detection saved us thousands in potential water damage and prevented invasive wall tear-downs."</p>
+                    <div class="h2-testi-author">
+                        <div class="h2-testi-avatar">AW</div>
+                        <div>
+                            <strong style="display:block; font-family:var(--font-heading); font-size: 1.1rem;">Alice Wong</strong>
+                            <span style="color:var(--gray); font-size: 0.9rem;">Director of Operations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="h2-testi-card">
+                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <p>"They installed a new hybrid thermal system for us. The automated options made it easy to optimize energy usage. The installation looks like a spaceship engine room and runs flawlessly."</p>
+                    <div class="h2-testi-author">
+                        <div class="h2-testi-avatar">MK</div>
+                        <div>
+                            <strong style="display:block; font-family:var(--font-heading); font-size: 1.1rem;">Mark Knight</strong>
+                            <span style="color:var(--gray); font-size: 0.9rem;">Commercial Architect</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="h2-testi-card">
+                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <p>"Zero hidden fees. The transparent engineering step they do before starting work is something every contractor should adopt. Honest, elite service that respects the client's time."</p>
+                    <div class="h2-testi-author">
+                        <div class="h2-testi-avatar">EL</div>
+                        <div>
+                            <strong style="display:block; font-family:var(--font-heading); font-size: 1.1rem;">Emma Lewis</strong>
+                            <span style="color:var(--gray); font-size: 0.9rem;">Property Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === FINAL CTA === -->
+        <section class="final-cta reveal">
+            <div class="container text-center">
+                <span class="section-tag">Instant Relief</span>
+                <h2 class="section-title" style="color:var(--white);">SYSTEMS AT <span>RISK?</span></h2>
+                <p style="color:var(--gray); font-size:1.2rem; margin:20px auto 40px; max-width:700px;">
+                    Don't let a minor fracture become a structural disaster. Join thousands of property owners who trust PlumServe for permanent, precision-engineered solutions. Available 24/7 for absolute peace of mind.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="contact.html" class="btn-primary">📅 Book Emergency Repair</a>
+                    <a href="services.html" class="btn-outline">Browse Shield Plans</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient)"/>
+                        <defs>
+                            <linearGradient id="droplet-gradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff9142"/>
+                                <stop offset="1" stop-color="#cc5600"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                        <span class="logo-text">Plum<span>Serve</span></span>
+                    </a>
+                    <p>Your trusted partner for premium plumbing services. Reliable, professional, and certified
+                        solutions for your home and business since 1995.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-col reveal">
+                    <h4>Direct Access</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal reveal-delay-2">
+                    <h4>Command Hub</h4>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="dashboard-user.html">User Panel</a></li>
+                        <li><a href="dashboard-admin.html">Admin Hub</a></li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Emergency Repair</a></li>
+                        <li><a href="#">Leak Detection</a></li>
+                        <li><a href="#">Drain Cleaning</a></li>
+                        <li><a href="#">Pipe Relining</a></li>
+                        <li><a href="#">Water Heaters</a></li>
+                        <li><a href="#">Commercial</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- Bottom bar -->
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2025 <span>PlumServe</span>. All rights reserved. Professional excellence
+                    since 1995.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

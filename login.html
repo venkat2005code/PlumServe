@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Access your PlumServe dashboard – Manage bookings, track service history, and monitor smart flow systems." />
+    <title>Login | PlumServe – Premium Plumbing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+
+<div class="auth-split-layout">
+    <!-- Visual Side -->
+    <div class="auth-visual-side">
+        <div class="auth-visual-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient)"/>
+                        <defs>
+                            <linearGradient id="droplet-gradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff9142"/>
+                                <stop offset="1" stop-color="#cc5600"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Plum<span>Serve</span></span>
+            </a>
+            <h2>Experience <span>Precision</span> Overflowing.</h2>
+            <p>Join the elite network of property managers and homeowners who trust PlumServe for their critical
+                infrastructure needs.</p>
+        </div>
+    </div>
+
+    <!-- Form Side -->
+    <div class="auth-form-side">
+        <button class="theme-btn auth-theme" id="theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="globe-btn auth-globe" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <ellipse cx="12" cy="12" rx="4" ry="10" />
+                        <line x1="2" y1="9" x2="22" y2="9" />
+                        <line x1="2" y1="15" x2="22" y2="15" />
+                    </svg>
+                    <span class="dir-label" id="dir-label">LTR</span>
+                </button>
+        <div class="auth-form-container">
+            <!-- Mobile Logo -->
+            <a href="index.html" class="logo mobile-auth-logo">
+                <div class="logo-icon">
+                    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient-mobile)"/>
+                        <defs>
+                            <linearGradient id="droplet-gradient-mobile" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff9142"/>
+                                <stop offset="1" stop-color="#cc5600"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Plum<span>Serve</span></span>
+            </a>
+            <div class="auth-form-header">
+                <h3>Member Login</h3>
+                <p>Welcome back! Please enter your credentials.</p>
+            </div>
+
+            <div class="auth-social-btns">
+                <button class="btn-social"><i class="fa-brands fa-google"></i> Google</button>
+                <button class="btn-social"><i class="fa-brands fa-apple"></i> Apple ID</button>
+            </div>
+
+            <div class="auth-divider">Or continue with email</div>
+
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="name@company.com" required />
+                </div>
+                <div class="form-group">
+                    <div class="label-row">
+                        <label>Password</label>
+                        <a href="#" class="forgot-link">Forgot?</a>
+                    </div>
+                    <input type="password" placeholder="••••••••" required />
+                </div>
+                <button type="submit" class="btn-primary full-width">Sign In</button>
+            </form>
+
+            <div class="auth-footer-prompt">
+                Don't have an account? <a href="signup.html">Create One</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+
+</html>

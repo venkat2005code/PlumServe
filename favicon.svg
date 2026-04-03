@@ -1,0 +1,9 @@
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient)"/>
+    <defs>
+        <linearGradient id="droplet-gradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ff9142"/>
+            <stop offset="1" stop-color="#cc5600"/>
+        </linearGradient>
+    </defs>
+</svg>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Contact PlumServe – Premium plumbing support, emergency dispatch, and smart home consultations." />
+    <title>Contact Us | PlumServe – Premium Plumbing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+
+<body class="contact-page">
+
+    <!-- ══ HEADER ══ -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient)"/>
+                        <defs>
+                            <linearGradient id="droplet-gradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff9142"/>
+                                <stop offset="1" stop-color="#cc5600"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Plum<span>Serve</span></span>
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Home <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="index.html">Home Option 1</a>
+                        <a href="index2.html">Home Option 2</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+                <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+
+                <div class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Dashboards <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="dashboard-user.html">User Dashboard</a>
+                        <a href="dashboard-admin.html">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <div class="header-auth-links" style="display:flex; gap:15px; align-items:center;">
+                    <a href="login.html" class="nav-link" style="padding:0; text-transform:uppercase; font-size:13px; font-weight:600; letter-spacing:1px;">Sign In</a>
+                    <a href="signup.html" class="nav-link nav-signup" style="padding:0; text-transform:uppercase; font-size:13px; font-weight:600; letter-spacing:1px;">Sign Up</a>
+                </div>
+                
+                <button class="theme-btn" id="theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <ellipse cx="12" cy="12" rx="4" ry="10" />
+                        <line x1="2" y1="9" x2="22" y2="9" />
+                        <line x1="2" y1="15" x2="22" y2="15" />
+                    </svg>
+                    <span class="dir-label" id="dir-label">LTR</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link" data-toggle="#mob-home-dd">Home <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-home-dd">
+                <a href="index.html">Home Style 1</a>
+                <a href="index2.html">Home Style 2</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
+        <div class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></div>
+
+        <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link active">Contact</a></div>
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link" data-toggle="#mob-dash-dd">Dashboards <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-dash-dd">
+                <a href="dashboard-user.html">User Panel</a>
+                <a href="dashboard-admin.html">Admin Hub</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item"><a href="login.html" class="mobile-nav-link">Sign In</a></div>
+        <div class="mobile-nav-item"><a href="signup.html" class="mobile-nav-link">Sign Up</a></div>
+    </nav>
+
+    <main>
+        <!-- 1. Contact Hero -->
+        <section class="contact-hero immersive-hero" id="hero">
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-content">
+                <div class="reveal from-bottom">
+                    <span class="hero-tag">24/7 Support</span>
+                    <h1 class="hero-title-large">
+                        DIRECT <span>LINE</span><br />
+                        TO MASTERY
+                    </h1>
+                    <p class="hero-para">Expert assistance is just a connection away. Reach out for emergency repairs or
+                        scheduled optimizations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Contact Section -->
+        <section class="contact-section reveal" id="contact">
+            <div class="container">
+                <div class="contact-grid-main">
+                    <div class="contact-info-cards">
+                        <div class="info-card-modern reveal">
+                            <div class="info-icon-box"><i class="fa-solid fa-phone"></i></div>
+                            <h4 class="info-title-modern">Emergency Hotline</h4>
+                            <p class="info-text-modern">+1 (800) PLUM-SERVE</p>
+                            <p class="info-subtext-modern">Available 24/7 for burst pipes and urgent leaks.</p>
+                        </div>
+                        <div class="info-card-modern reveal reveal-delay-1">
+                            <div class="info-icon-box"><i class="fa-solid fa-envelope"></i></div>
+                            <h4 class="info-title-modern">Email Support</h4>
+                            <p class="info-text-modern">hello@plumserve.com</p>
+                            <p class="info-subtext-modern">General inquiries and non-urgent scheduling.</p>
+                        </div>
+                        <div class="info-card-modern reveal reveal-delay-2">
+                            <div class="info-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                            <h4 class="info-title-modern">Technical HQ</h4>
+                            <p class="info-text-modern">Plumbing Springs, CA</p>
+                            <p class="info-subtext-modern">456 Water Way, Suite 200, 90210.</p>
+                        </div>
+                    </div>
+
+                    <div class="dispatch-form-container reveal from-right">
+                        <span class="section-tag">Request Service</span>
+                        <h2 class="section-title">Initiate <span>Dispatch</span></h2>
+                        <p>Fill out the technical brief below. For emergencies, please use the direct phone lines listed
+                            above.</p>
+
+                        <div class="service-metrics">
+                            <div class="metric">
+                                <span class="val">14m</span>
+                                <span class="lab">Avg Response</span>
+                            </div>
+                            <div class="metric">
+                                <span class="val">98%</span>
+                                <span class="lab">First-Visit Fix</span>
+                            </div>
+                        </div>
+
+                        <form id="service-form" class="technical-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="John Doe" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" placeholder="+1 (555) 000-0000" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Service Type</label>
+                                <select required>
+                                    <option value="">Select Category</option>
+                                    <option value="leak">Leak Detection</option>
+                                    <option value="drain">Drain Cleaning</option>
+                                    <option value="heater">Water Heater</option>
+                                    <option value="emergency">Emergency Repair</option>
+                                    <option value="smart">Smart Home Setup</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Detailed Inquiry</label>
+                                <textarea placeholder="Briefly describe the issue..." rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary full-width">Launch Dispatch Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Global Map / Coverage -->
+        <section class="contact-map reveal" id="map">
+            <div class="map-placeholder">
+                <div class="map-overlay">
+                    <div class="coverage-box">
+                        <h3>Operating Within 50-Mile Radius</h3>
+                        <p>Serving the entire metropolitan area and surrounding luxury districts.</p>
+                        <ul class="city-list">
+                            <li>Plumbing City</li>
+                            <li>Waterford Heights</li>
+                            <li>Riverdale Park</li>
+                            <li>Silver Sprit Estates</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Simulated Map Texture -->
+                <div class="map-texture"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ══ FOOTER ══ -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient)"/>
+                        <defs>
+                            <linearGradient id="droplet-gradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff9142"/>
+                                <stop offset="1" stop-color="#cc5600"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                        <span class="logo-text">Plum<span>Serve</span></span>
+                    </a>
+                    <p>Your trusted partner for premium plumbing services. Reliable, professional, and certified
+                        solutions for your home and business since 1995.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-col reveal">
+                    <h4>Direct Access</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal reveal-delay-2">
+                    <h4>Command Hub</h4>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="dashboard-user.html">User Panel</a></li>
+                        <li><a href="dashboard-admin.html">Admin Hub</a></li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Emergency Repair</a></li>
+                        <li><a href="#">Leak Detection</a></li>
+                        <li><a href="#">Drain Cleaning</a></li>
+                        <li><a href="#">Pipe Relining</a></li>
+                        <li><a href="#">Water Heaters</a></li>
+                        <li><a href="#">Commercial</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- Bottom bar -->
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2025 <span>PlumServe</span>. All rights reserved. Professional excellence
+                    since 1995.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

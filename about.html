@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Learn more about PlumServe – Our history, our mission, and the master plumbers driving excellence." />
+    <title>About Us | PlumServe – Premium Plumbing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css?v=2" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+
+<body class="about-page">
+
+    <!-- ══ HEADER ══ -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient)"/>
+                        <defs>
+                            <linearGradient id="droplet-gradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff9142"/>
+                                <stop offset="1" stop-color="#cc5600"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Plum<span>Serve</span></span>
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Home <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="index.html">Home Option 1</a>
+                        <a href="index2.html">Home Option 2</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="about.html" class="nav-link active">About</a></div>
+                <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Dashboards <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="dashboard-user.html">User Dashboard</a>
+                        <a href="dashboard-admin.html">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <div class="header-auth-links" style="display:flex; gap:15px; align-items:center;">
+                    <a href="login.html" class="nav-link" style="padding:0; text-transform:uppercase; font-size:13px; font-weight:600; letter-spacing:1px;">Sign In</a>
+                    <a href="signup.html" class="nav-link nav-signup" style="padding:0; text-transform:uppercase; font-size:13px; font-weight:600; letter-spacing:1px;">Sign Up</a>
+                </div>
+                
+                <button class="theme-btn" id="theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <ellipse cx="12" cy="12" rx="4" ry="10" />
+                        <line x1="2" y1="9" x2="22" y2="9" />
+                        <line x1="2" y1="15" x2="22" y2="15" />
+                    </svg>
+                    <span class="dir-label" id="dir-label">LTR</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link" data-toggle="#mob-home-dd">Home <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-home-dd">
+                <a href="index.html">Home Style 1</a>
+                <a href="index2.html">Home Style 2</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link active">About</a></div>
+        <div class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></div>
+
+        <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></div>
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link" data-toggle="#mob-dash-dd">Dashboards <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-dash-dd">
+                <a href="dashboard-user.html">User Panel</a>
+                <a href="dashboard-admin.html">Admin Hub</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item"><a href="login.html" class="mobile-nav-link">Sign In</a></div>
+        <div class="mobile-nav-item"><a href="signup.html" class="mobile-nav-link">Sign Up</a></div>
+    </nav>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="about-hero hero-immersive" id="hero">
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-content">
+                <div class="reveal from-bottom">
+                    <span class="hero-tag">Our Legacy</span>
+                    <h1 class="hero-title-large">
+                        ENGINEERING<br />
+                        TRUST SINCE <span>1995</span>
+                    </h1>
+                    <p class="hero-para">A journey of precision, reliability, and master craftsmanship in every
+                        connection we make.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Mission Section -->
+        <section class="about-mission reveal" id="mission">
+            <div class="container">
+                <div class="mission-panels">
+                    <div class="mission-panel reveal from-left">
+                        <div class="panel-icon"><i class="fa-solid fa-bullseye" style="color:var(--gold)"></i></div>
+                        <h3>Our Mission</h3>
+                        <p>To empower every household with world-class plumbing infrastructure that ensures safety,
+                            efficiency, and uncompromising water integrity.</p>
+                    </div>
+                    <div class="mission-panel reveal from-right">
+                        <div class="panel-icon"><i class="fa-solid fa-eye" style="color:var(--gold)"></i></div>
+                        <h3>Our Vision</h3>
+                        <p>To be the global benchmark for plumbing excellence, where sustainable engineering meets the
+                            vital needs of modern society.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Story Section -->
+        <section class="about-story" id="story">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="reveal from-left">
+                        <span class="section-tag">The Beginning</span>
+                        <h2 class="section-title">Built on <span>Excellence</span></h2>
+                        <div class="gold-line" style="margin:0 0 24px;"></div>
+                        <p class="section-desc">PlumServe began with a simple mission: to bring unparalleled precision
+                            to the plumbing industry. What started as a single van operation has grown into a
+                            nationwide network of master-certified professionals.</p>
+                        <p class="section-desc">We don't just fix pipes; we engineer peace of mind for homeowners and
+                            enterprises alike, utilizing the latest in non-invasive diagnostic technology.</p>
+                    </div>
+                    <div class="reveal from-right">
+                        <div class="stats-grid-about">
+                            <div class="stat-card-about">
+                                <div class="stat-value-large">25K+</div>
+                                <div class="stat-label-small">Repairs Completed</div>
+                            </div>
+                            <div class="stat-card-about">
+                                <div class="stat-value-large">150+</div>
+                                <div class="stat-label-small">Master Technicians</div>
+                            </div>
+                            <div class="stat-card-about">
+                                <div class="stat-value-large">30</div>
+                                <div class="stat-label-small">Years of Legacy</div>
+                            </div>
+                            <div class="stat-card-about">
+                                <div class="stat-value-large">99%</div>
+                                <div class="stat-label-small">Success Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Values Section -->
+        <section class="about-values" id="values">
+            <div class="container">
+                <div class="values-grid">
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i class="fa-solid fa-shield-halved" style="color:var(--gold)"></i>
+                        </div>
+                        <h3>Absolute Integrity</h3>
+                        <p>Transparent pricing and master-grade results. We stand behind every weld and every joint.</p>
+                    </div>
+                    <div class="value-card reveal reveal-delay-1">
+                        <div class="value-icon"><i class="fa-solid fa-microchip" style="color:var(--gold)"></i></div>
+                        <h3>Relentless Innovation</h3>
+                        <p>From acoustic sensors to CIPP relining, we deploy the future's technology today.</p>
+                    </div>
+                    <div class="value-card reveal reveal-delay-2">
+                        <div class="value-icon"><i class="fa-solid fa-leaf" style="color:var(--gold)"></i></div>
+                        <h3>Eco-Conscious</h3>
+                        <p>Preserving the planet's most vital resource through high-efficiency water management.</p>
+                    </div>
+                    <div class="value-card reveal reveal-delay-3">
+                        <div class="value-icon"><i class="fa-solid fa-clock-rotate-left" style="color:var(--gold)"></i>
+                        </div>
+                        <h3>Elite Reliability</h3>
+                        <p>When minutes matter, our 24/7 rapid response units are always on the move.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Leadership Section -->
+        <section class="about-leadership" id="leadership">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Board of Masters</span>
+                    <h2 class="section-title">The Minds Behind <span>PlumServe</span></h2>
+                </div>
+                <div class="leader-grid">
+                    <div class="leader-card reveal">
+                        <div class="leader-img">
+                            <img src="assets/images/freepik__team-of-professional-plumbers-standing-together-wi__58425.png"
+                                alt="CEO" />
+                            <div class="leader-hover">
+                                <p>"Precision is the language of professional service."</p>
+                            </div>
+                        </div>
+                        <div class="leader-info">
+                            <h4>Alex Sterling</h4>
+                            <p>Founder & Chief Engineer</p>
+                        </div>
+                    </div>
+                    <div class="leader-card reveal reveal-delay-1">
+                        <div class="leader-img">
+                            <img src="assets/images/freepik__professional-plumber-inspecting-water-leak-in-resi__58420.png"
+                                alt="CIO" />
+                            <div class="leader-hover">
+                                <p>"Digital systems are the guardians of your home."</p>
+                            </div>
+                        </div>
+                        <div class="leader-info">
+                            <h4>Sarah Chen</h4>
+                            <p>Director of Smart Systems</p>
+                        </div>
+                    </div>
+                    <div class="leader-card reveal reveal-delay-2">
+                        <div class="leader-img">
+                            <img src="assets/images/freepik__professional-plumber-repairing-pipes-in-a-modern-h__58419.png"
+                                alt="COO" />
+                            <div class="leader-hover">
+                                <p>"Scale requires uncompromising logistical discipline."</p>
+                            </div>
+                        </div>
+                        <div class="leader-info">
+                            <h4>Marcus Thorne</h4>
+                            <p>Head of Field Operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Global Impact Section -->
+        <section class="about-impact" id="impact">
+            <div class="container">
+                <div class="impact-grid">
+                    <div class="impact-stats reveal">
+                        <div class="stat-item">
+                            <span class="stat-number">100k+</span>
+                            <p>Homes Protected</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5M+</span>
+                            <p>Gallons Saved</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <p>Certified Masters</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <p>Response Shield</p>
+                        </div>
+                    </div>
+                    <div class="impact-content reveal from-right">
+                        <h3>Our Community Footprint</h3>
+                        <p>From historic residential districts to high-rise corporate towers, PlumServe is the trusted
+                            guardian of water integrity. Our massive service network ensures that elite technical
+                            support is accessible to everyone, everywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Lab Section (Scanline) -->
+        <section class="about-lab" id="lab">
+            <div class="lab-scanner-container">
+                <div class="lab-img-wrapper reveal">
+                    <img src="assets/images/freepik__emergency-plumber-repairing-burst-pipe-in-a-home-w__58423.png"
+                        alt="Testing Lab" />
+                    
+                </div>
+                <div class="lab-overlay-content container">
+                    <div class="reveal from-bottom">
+                        <span class="section-tag">Pressure Lab</span>
+                        <h2 class="section-title">Tested Under <span>Extreme</span> Conditions</h2>
+                        <p>Every fixture and sealant is scrutinized under laboratory pressure tests to ensure it meets
+                            our "Master Standard" before entering your home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Awards Section -->
+        <section class="about-awards" id="awards">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Recognition</span>
+                    <h2 class="section-title">Milestones of <span>Success</span></h2>
+                </div>
+                <div class="awards-carousel">
+                    <div class="award-card reveal">
+                        <div class="award-front">
+                            <i class="fa-solid fa-trophy" style="font-size:3rem; margin-bottom:20px;"></i>
+                            Green Plumber 2024
+                        </div>
+                        <div class="award-back">Voted #1 in Sustainable Water Management Practices.</div>
+                    </div>
+                    <div class="award-card reveal reveal-delay-1">
+                        <div class="award-front">
+                            <i class="fa-solid fa-medal" style="font-size:3rem; margin-bottom:20px;"></i>
+                            Service Excellence
+                        </div>
+                        <div class="award-back">Recognized for 99.9% customer satisfaction ratings.</div>
+                    </div>
+                    <div class="award-card reveal reveal-delay-2">
+                        <div class="award-front">
+                            <i class="fa-solid fa-star" style="font-size:3rem; margin-bottom:20px;"></i>
+                            Innovation Leader
+                        </div>
+                        <div class="award-back">Awarded for pioneering smart leak detection tech.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Final CTA -->
+        <section class="about-cta" id="cta">
+            <div class="cta-gradient-bg"></div>
+            <div class="container">
+                <div class="reveal from-bottom">
+                    <h2>JOIN THE LEGACY?</h2>
+                    <p>Upgrade your home's infrastructure with the masters.</p>
+                    <div style="margin-top:40px;">
+                        <a href="contact.html" class="btn-primary">Connect With A Master</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ══ FOOTER ══ -->
+    <!-- ════════════════════════════════════════
+    FINAL CTA
+    ════════════════════════════════════════ -->
+    <section class="final-cta reveal">
+        <div class="container">
+            <span class="section-tag">Join The Legacy</span>
+            <h2 class="section-title">READY TO <span>WORK</span> WITH THE BEST?</h2>
+            <p style="color:var(--gray); font-size:1.2rem; margin:20px auto 40px; max-width:700px;">
+                Experience the PlumServe difference today. Our team of master plumbers is ready to handle your most
+                complex challenges with precision.
+            </p>
+            <div class="hero-cta-group">
+                <a href="contact.html" class="btn-primary">📅 Book Consultation</a>
+                <a href="services.html" class="btn-outline">Explore Capabilities</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient)"/>
+                        <defs>
+                            <linearGradient id="droplet-gradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff9142"/>
+                                <stop offset="1" stop-color="#cc5600"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                        <span class="logo-text">Plum<span>Serve</span></span>
+                    </a>
+                    <p>Your trusted partner for premium plumbing services. Reliable, professional, and certified
+                        solutions for your home and business since 1995.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Direct Access</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Command Hub</h4>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="dashboard-user.html">User Panel</a></li>
+                        <li><a href="dashboard-admin.html">Admin Hub</a></li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Emergency Repair</a></li>
+                        <li><a href="#">Leak Detection</a></li>
+                        <li><a href="#">Drain Cleaning</a></li>
+                        <li><a href="#">Pipe Relining</a></li>
+                        <li><a href="#">Water Heaters</a></li>
+                        <li><a href="#">Commercial</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- Bottom bar -->
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2025 <span>PlumServe</span>. All rights reserved. Professional excellence
+                    since 1995.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    </script>
+</body>
+
+</html>

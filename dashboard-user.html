@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Manage your property's plumbing infrastructure with the PlumServe User Dashboard." />
+    <title>User Dashboard | PlumServe – Premium Plumbing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+
+<body class="dashboard-page">
+    <div class="dash-wrapper">
+        <!-- Sidebar -->
+        <aside class="dash-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                    <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#droplet-gradient)"/>
+                        <defs>
+                            <linearGradient id="droplet-gradient" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ff9142"/>
+                                <stop offset="1" stop-color="#cc5600"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="logo-text">Plum<span>Serve</span></span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active"><i class="fa-solid fa-gauge-high"></i> <span>Overview</span></a>
+                <a href="#history" class="nav-item"><i class="fa-solid fa-clock-rotate-left"></i> <span>Service History</span></a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i> <span>Billing</span></a>
+                <a href="services.html#shield-plans" class="nav-item"><i class="fa-solid fa-shield-halved"></i> <span>Shield Care</span></a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-gear"></i> <span>Settings</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> <span>Exit Command</span></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dash-main">
+            <header class="dash-header">
+                <div class="header-left">
+                    <button class="dash-sidebar-toggle" id="dash-sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+                    <div class="header-title-stack">
+                        <h1>Operational Overview</h1>
+                        <p>Monitoring Property ID: <span>#PS-90210</span></p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-action-item" style="display: flex; gap: 15px; align-items: center;">
+                        <button class="theme-btn" id="theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                        <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <ellipse cx="12" cy="12" rx="4" ry="10" />
+                                <line x1="2" y1="9" x2="22" y2="9" />
+                                <line x1="2" y1="15" x2="22" y2="15" />
+                            </svg>
+                            <span class="dir-label" id="dir-label">LTR</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="u-name">John Doe</span>
+                            <span class="u-rank">Gold Member</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1470&auto=format&fit=crop"
+                            alt="User" class="u-avatar" />
+                    </div>
+                </div>
+            </header>
+
+            <div class="dash-content">
+                <!-- Row 1: Key Stats & Pulse Wave -->
+                <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="stat-card reveal-scale">
+                        <div class="s-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="s-info">
+                            <span class="s-label">Daily Consumption</span>
+                            <span class="s-value">142 Gals</span>
+                        </div>
+                        <div class="s-trend up">+2.4% <i class="fa-solid fa-arrow-trend-up"></i></div>
+                    </div>
+
+                    <!-- Chart 7: Real-time Pulse Wave -->
+                    <div class="infographic-card reveal reveal-delay-1">
+                        <div class="chart-header">
+                            <h4>Real-time Flow Velocity</h4>
+                            <div class="chart-tag">Active Scan</div>
+                        </div>
+                        <div class="visual-container" style="flex-direction: column; justify-content: center;">
+                            <svg class="sine-wave" viewBox="0 0 100 60">
+                                <path class="wave-path" d="M0,30 Q10,10 20,30 T40,30 T60,30 T80,30 T100,30 T120,30 T140,30 T160,30 T180,30 T200,30" stroke="var(--gold)" fill="none" />
+                            </svg>
+                            <div style="margin-top: 15px; font-weight: 700; color: var(--white); font-size: 1.2rem;">0.8 <small style="font-size: 0.6rem; color: var(--gray);">L/sec</small></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card reveal reveal-delay-2 highlight">
+                        <div class="s-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="s-info">
+                            <span class="s-label">Armor Shield Status</span>
+                            <span class="s-value" style="color:var(--gold)">Active Protection</span>
+                        </div>
+                        <div class="s-trend">Next Scan: Oct 25</div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Analytics & Progress -->
+                <div class="data-row" style="margin-top: 30px;">
+                    <!-- Chart 8: Savings Area Chart -->
+                    <div class="infographic-card large reveal">
+                        <div class="chart-header">
+                            <h3>Eco-Efficiency Savings</h3>
+                            <div class="chart-period">Monthly Trajectory</div>
+                        </div>
+                        <div class="visual-container">
+                            <svg class="svg-chart" viewBox="0 0 500 200">
+                                <defs>
+                                    <linearGradient id="area-gradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#ff9142" stop-opacity="0.3" />
+                                        <stop offset="100%" stop-color="#ff9142" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,180 L50,160 L100,170 L150,130 L200,110 L250,120 L300,80 L350,90 L400,50 L450,60 L500,30 L500,200 L0,200 Z" fill="url(#area-gradient)" />
+                                <path class="chart-path" d="M0,180 L50,160 L100,170 L150,130 L200,110 L250,120 L300,80 L350,90 L400,50 L450,60 L500,30" />
+                            </svg>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 12px; font-size: 12px; color: var(--gray);">
+                            <span>JAN</span><span>MAR</span><span>MAY</span><span>JUL</span><span>SEP</span><span>NOV</span>
+                        </div>
+                    </div>
+
+                    <!-- Chart 10: Spend Segments -->
+                    <div class="infographic-card reveal reveal-delay-1">
+                        <div class="chart-header">
+                            <h4>Service Spend Analysis</h4>
+                        </div>
+                        <div class="visual-container" style="flex-direction: column; gap: 20px; justify-content: center;">
+                            <div style="width: 100%;">
+                                <div style="display:flex; justify-content: space-between; font-size:11px; margin-bottom: 8px;">
+                                    <span>Maintenance</span>
+                                    <span>$450.00</span>
+                                </div>
+                                <div class="chart-stacked-segments">
+                                    <div class="segment seg-1" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <div style="width: 100%;">
+                                <div style="display:flex; justify-content: space-between; font-size:11px; margin-bottom: 8px;">
+                                    <span>Emergencies</span>
+                                    <span>$120.00</span>
+                                </div>
+                                <div class="chart-stacked-segments">
+                                    <div class="segment seg-2" style="width: 30%;"></div>
+                                </div>
+                            </div>
+                            <div style="width: 100%;">
+                                <div style="display:flex; justify-content: space-between; font-size:11px; margin-bottom: 8px;">
+                                    <span>Upgrades</span>
+                                    <span>$800.00</span>
+                                </div>
+                                <div class="chart-stacked-segments">
+                                    <div class="segment seg-3" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Utility & Alerts -->
+                <div class="data-row" style="margin-top: 30px;">
+                    <div class="activity-feed reveal">
+                        <div class="chart-header">
+                            <h3>Property Insight Channel</h3>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="a-icon alert"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                <div class="a-content">
+                                    <span class="a-title">High Pressure Detected: Sector A</span>
+                                    <span class="a-time">2 hours ago • Automated Check</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="a-icon"><i class="fa-solid fa-circle-check" style="color:var(--gold)"></i></div>
+                                <div class="a-content">
+                                    <span class="a-title">Annual Filter Certification</span>
+                                    <span class="a-time">Yesterday • Document Uploaded</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart 9: Fluid Level Tank -->
+                    <div class="infographic-card reveal reveal-delay-1">
+                        <div class="chart-header">
+                            <h4>Solar Thermal Tank Level</h4>
+                        </div>
+                        <div class="visual-container" style="gap: 25px;">
+                            <div class="chart-fluid-container">
+                                <div class="fluid-fill"></div>
+                            </div>
+                            <div class="tank-metrics">
+                                <div style="margin-bottom: 15px;">
+                                    <small style="color: var(--gray); display: block;">Current Volume</small>
+                                    <span style="font-size: 1.5rem; font-weight: 800; color: var(--gold);">68%</span>
+                                </div>
+                                <div>
+                                    <small style="color: var(--gray); display: block;">Temp Alpha</small>
+                                    <span style="font-size: 1.5rem; font-weight: 800; color: var(--white);">52°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="dash-overlay" id="dash-overlay"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
