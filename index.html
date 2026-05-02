@@ -80,16 +80,7 @@
                 <button class="theme-btn" id="theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <ellipse cx="12" cy="12" rx="4" ry="10" />
-                        <line x1="2" y1="9" x2="22" y2="9" />
-                        <line x1="2" y1="15" x2="22" y2="15" />
-                    </svg>
-                    <span class="dir-label" id="dir-label">LTR</span>
-                </button>
+                <button class="dir-btn" id="dir-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR"><span class="dir-label">LTR</span></button>
                 <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
@@ -109,7 +100,6 @@
         </div>
         <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
         <div class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></div>
-
         <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></div>
         <div class="mobile-nav-item">
             <span class="mobile-nav-link" data-toggle="#mob-dash-dd">Dashboards <span class="arrow">▾</span></span>
@@ -118,6 +108,15 @@
                 <a href="dashboard-admin.html">Admin Dashboard</a>
             </div>
         </div>
+        
+        <!-- #33 Relocated Toggles -->
+        <div class="mobile-nav-item mobile-toggles-container">
+            <button class="theme-btn mobile-toggle-btn" id="theme-btn-mob" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i> Theme
+            </button>
+            <button class="dir-btn mobile-toggle-btn" id="dir-btn-mob" aria-label="Toggle Direction"><span class="dir-label">LTR</span></button>
+        </div>
+
         <div class="mobile-nav-item"><a href="login.html" class="mobile-nav-link">Sign In</a></div>
         <div class="mobile-nav-item"><a href="signup.html" class="mobile-nav-link">Sign Up</a></div>
     </nav>
@@ -126,25 +125,24 @@
      SECTION 1 — HERO
 ════════════════════════════════════════ -->
     <section id="hero" class="hero-immersive">
+        <div class="hero-bg-image" style="position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=2070') center/cover; opacity: 0.4;"></div>
         <div class="hero-bg-overlay"></div>
-        <div class="container hero-content-centered">
+        <div class="container hero-content-centered" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh;">
             <div class="hero-text-wrap reveal">
                 <span class="hero-tag">24/7 Premium Support</span>
-                <h1 class="hero-title-large">
+                <h1 class="hero-title-large" style="margin-bottom: 2rem;">
                     ENGINEERING <br />
                     <span>PERFECT FLOW</span>
                 </h1>
-                <p class="hero-para">
+                <p class="hero-para" style="margin: 0 auto 3rem; max-width: 700px; font-size: 1.25rem;">
                     Elite plumbing solutions for modern estates. We combine precision technology with master
                     craftsmanship to protect your home's most vital systems.
                 </p>
-                <div class="hero-cta-group">
+                <div class="hero-cta-group" style="display: flex; gap: 20px; justify-content: center;">
                     <a href="services.html" class="btn-primary">Explore Services</a>
                     <a href="contact.html" class="btn-outline">Book Dispatch</a>
                 </div>
             </div>
-
-
         </div>
     </section>
 
@@ -193,7 +191,7 @@
                     <div class="cat-content">
                         <h3>Critical Response</h3>
                         <p>24/7 emergency infrastructure support.</p>
-                        <a href="services.html#emergency" class="text-link">View Protocol →</a>
+                        <a href="services.html#emergency" class="text-link">View Protocol <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="cat-item-group">
@@ -202,7 +200,7 @@
                             alt="Residential" />
                         <div class="cat-content">
                             <h3>Residential Estate</h3>
-                            <a href="services.html#residential" class="text-link">Explore →</a>
+                            <a href="services.html#residential" class="text-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="cat-item reveal reveal-delay-2">
@@ -210,7 +208,7 @@
                             alt="Commercial" />
                         <div class="cat-content">
                             <h3>Commercial Grid</h3>
-                            <a href="services.html#commercial" class="text-link">Explore →</a>
+                            <a href="services.html#commercial" class="text-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -258,82 +256,8 @@
         </div>
     </section>
 
-    <!-- ══ SECTION 5 — TICKER ══ -->
-    <div id="ticker" aria-hidden="true" class="ticker-v2">
-        <div class="ticker-track">
-
-            <div class="ticker-item"><span>★</span> UPFRONT PRICING</div>
-            <div class="ticker-item"><span>★</span> MASTER CERTIFIED</div>
-            <div class="ticker-item"><span>★</span> 24/7 SUPPORT</div>
-            <div class="ticker-item"><span>★</span> ECO SOLUTIONS</div>
-            <div class="ticker-item"><span>★</span> SHIELD PROTECTION</div>
-            <!-- Duplicates for loop -->
-
-            <div class="ticker-item"><span>★</span> UPFRONT PRICING</div>
-            <div class="ticker-item"><span>★</span> MASTER CERTIFIED</div>
-            <div class="ticker-item"><span>★</span> 24/7 SUPPORT</div>
-        </div>
-    </div>
 
 
-    <!-- ════════════════════════════════════════
-     SECTION 7 — ESSENTIALS (Products)
-    ════════════════════════════════════════ -->
-    <section id="essentials" class="section-padding alt-bg">
-        <div class="container">
-            <div class="section-header split-header">
-                <div>
-                    <span class="section-tag">Supply Hub</span>
-                    <h2 class="section-title">Critical <span>Components</span></h2>
-                </div>
-                <a href="services.html" class="btn-outline">View Shield Plans</a>
-            </div>
-            <div class="essentials-row">
-                <div class="essential-card reveal">
-                    <div class="ec-img">
-                        <img src="assets/images/freepik__professional-plumbing-tools-arranged-on-workbench-__58424.png"
-                            alt="Repair" />
-                    </div>
-                    <div class="ec-info">
-                        <h4>Leak Repair Pack</h4>
-                        <p>Complete emergency sealing for critical points.</p>
-                        <div class="ec-footer">
-                            <span class="price">$149</span>
-                            <a href="contact.html" class="icon-link"><i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="essential-card reveal reveal-delay-1">
-                    <div class="ec-img">
-                        <img src="assets/images/freepik__professional-plumber-installing-a-modern-water-hea__58422.png"
-                            alt="Heater" />
-                    </div>
-                    <div class="ec-info">
-                        <h4>Smart Heater Hub</h4>
-                        <p>Next-gen control for residential water heating.</p>
-                        <div class="ec-footer">
-                            <span class="price">$899</span>
-                            <a href="contact.html" class="icon-link"><i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="essential-card reveal reveal-delay-2">
-                    <div class="ec-img">
-                        <img src="assets/images/freepik__plumber-cleaning-a-clogged-drain-pipe-in-a-bathroo__58421.png"
-                            alt="Jetting" />
-                    </div>
-                    <div class="ec-info">
-                        <h4>Hydro-Jet Service</h4>
-                        <p>High-pressure clearing for resilient drainage.</p>
-                        <div class="ec-footer">
-                            <span class="price">$245</span>
-                            <a href="contact.html" class="icon-link"><i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <!-- ══ SECTION 9 — TESTIMONIALS (Masonry) ══ -->
@@ -371,205 +295,24 @@
         </div>
     </section>
 
-    <!-- ══ SECTION 10 — VIDEO ══ -->
-    <section id="video" class="video-section-v2 reveal">
-        <div class="container">
-            <div class="video-box">
-                <img src="assets/images/freepik__professional-plumbing-tools-arranged-on-workbench-__58424.png"
-                    alt="Video" />
-                <div class="video-content">
-                    <button class="play-trigger"><i class="fa-solid fa-play"></i></button>
-                    <h3>The PlumServe Method</h3>
-                    <p>Experience the precision behind our 50,000+ completed jobs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
     <!-- ════════════════════════════════════════
-     SECTION 11 — TEAM
-════════════════════════════════════════ -->
-    <section id="team">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Experts</span>
-                <h2 class="section-title">Meet The <span>Team</span></h2>
-                <div class="gold-line"></div>
-            </div>
-            <div class="team-grid">
-                <div class="team-card reveal-scale">
-                    <div class="team-img">
-                        <img src="assets/images/freepik__team-of-professional-plumbers-standing-together-wi__58425.png"
-                            alt="John Wick" loading="lazy" />
-                        <div class="team-social">
-                            <a href="#" class="team-social-link">𝕏</a>
-                            <a href="#" class="team-social-link">in</a>
-                            <a href="#" class="team-social-link">📸</a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <div class="team-name">Julian Thorne</div>
-                        <div class="team-role">Master Plumber</div>
-                    </div>
-                </div>
-                <div class="team-card reveal reveal-delay-1">
-                    <div class="team-img">
-                        <img src="assets/images/freepik__professional-plumber-repairing-pipes-in-a-modern-h__58419.png"
-                            alt="Sarah Miller" loading="lazy" />
-                        <div class="team-social">
-                            <a href="#" class="team-social-link">𝕏</a>
-                            <a href="#" class="team-social-link">in</a>
-                            <a href="#" class="team-social-link">📸</a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <div class="team-name">Sarah Miller</div>
-                        <div class="team-role">Service Manager</div>
-                    </div>
-                </div>
-                <div class="team-card reveal reveal-delay-2">
-                    <div class="team-img">
-                        <img src="assets/images/freepik__professional-plumber-inspecting-water-leak-in-resi__58420.png"
-                            alt="Robert Chen" loading="lazy" />
-                        <div class="team-social">
-                            <a href="#" class="team-social-link">𝕏</a>
-                            <a href="#" class="team-social-link">in</a>
-                            <a href="#" class="team-social-link">📸</a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <div class="team-name">Robert Chen</div>
-                        <div class="team-role">Installation Expert</div>
-                    </div>
-                </div>
-                <div class="team-card reveal reveal-delay-3">
-                    <div class="team-img">
-                        <img src="assets/images/freepik__emergency-plumber-repairing-burst-pipe-in-a-home-w__58423.png"
-                            alt="Elena Rodriguez" loading="lazy" />
-                        <div class="team-social">
-                            <a href="#" class="team-social-link">𝕏</a>
-                            <a href="#" class="team-social-link">in</a>
-                            <a href="#" class="team-social-link">📸</a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <div class="team-name">Elena Rodriguez</div>
-                        <div class="team-role">Customer Success</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ════════════════════════════════════════
-     SECTION 12 — GALLERY / LOOKBOOK
-════════════════════════════════════════ -->
-    <section id="gallery">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Project Gallery</span>
-                <h2 class="section-title">Latest <span>Work</span></h2>
-                <div class="gold-line"></div>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item reveal"><img
-                        src="assets/images/freepik__emergency-plumber-repairing-burst-pipe-in-a-home-w__58423.png"
-                        alt="Project 1" loading="lazy" />
-                    <div class="gallery-overlay"><span>🔍</span></div>
-                </div>
-                <div class="gallery-item reveal reveal-delay-1"><img
-                        src="assets/images/freepik__plumber-cleaning-a-clogged-drain-pipe-in-a-bathroo__58421.png"
-                        alt="Project 2" loading="lazy" />
-                    <div class="gallery-overlay"><span>🔍</span></div>
-                </div>
-                <div class="gallery-item reveal reveal-delay-2"><img
-                        src="assets/images/freepik__professional-plumbing-tools-arranged-on-workbench-__58424.png"
-                        alt="Project 3" loading="lazy" />
-                    <div class="gallery-overlay"><span>🔍</span></div>
-                </div>
-                <div class="gallery-item reveal reveal-delay-3"><img
-                        src="assets/images/freepik__professional-plumber-repairing-pipes-in-a-modern-h__58419.png"
-                        alt="Project 4" loading="lazy" />
-                    <div class="gallery-overlay"><span>🔍</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ════════════════════════════════════════
-     SECTION 13 — APP DOWNLOAD
-════════════════════════════════════════ -->
-    <section id="app-download">
-        <div class="container">
-            <div class="app-grid">
-                <div class="app-content reveal from-left">
-                    <span class="section-tag">Mobile App</span>
-                    <h2 class="section-title">Book Smarter,<br />Live <span>Better</span></h2>
-                    <div class="gold-line" style="margin:0 0 20px;"></div>
-                    <p class="section-desc">Get the PlumServe app and access exclusive priority booking, real-time
-                        technician tracking,
-                        and digital maintenance logs for your home systems.</p>
-                    <div class="app-badges">
-                        <a href="#" class="app-badge">
-                            <span class="store-icon">🍎</span>
-                            <div class="app-badge-text">
-                                <div class="small">Download on the</div>
-                                <div class="big">App Store</div>
-                            </div>
-                        </a>
-                        <a href="#" class="app-badge">
-                            <span class="store-icon">▶</span>
-                            <div class="app-badge-text">
-                                <div class="small">Get it on</div>
-                                <div class="big">Google Play</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="app-visual reveal from-right">
-                    <img src="assets/images/freepik__team-of-professional-plumbers-standing-together-wi__58425.png"
-                        alt="PlumServe Mobile App" loading="lazy" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- ════════════════════════════════════════
-     SECTION 13 — CTA
+     SECTION 6 — FINAL CTA
     ════════════════════════════════════════ -->
-    <section class="final-cta reveal">
-        <div class="container text-center">
-            <h2>SYSTEMS AT RISK?</h2>
-            <p>Don't wait for a disaster. Join thousands of homeowners who trust PlumServe for permanent logic.</p>
-            <a href="contact.html" class="btn-primary">Secure My Home Now</a>
-        </div>
-    </section>
-
-
-
-    <!-- ════════════════════════════════════════
-     SECTION 17 — PARTNERS
-════════════════════════════════════════ -->
-    <section id="partners">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Certifications</span>
-                <h2 class="section-title">Licensed & <span>Insured</span></h2>
-            </div>
-            <div class="partners-grid">
-                <div class="partner-item reveal">MASTER PLUMBER</div>
-                <div class="partner-item reveal reveal-delay-1">OSHA CERTIFIED</div>
-                <div class="partner-item reveal reveal-delay-2">BBB ACCREDITED</div>
-                <div class="partner-item reveal reveal-delay-3">EPA LEAD-SAFE</div>
-                <div class="partner-item reveal reveal-delay-4">PHCC MEMBER</div>
-                <div class="partner-item reveal">IAPMO CERTIFIED</div>
+    <section id="cta" class="section-padding alt-bg reveal">
+        <div class="container" style="text-align: center;">
+            <span class="section-tag">Instant Relief</span>
+            <h2 class="section-title">READY TO <span>RESTORE</span> FLOW?</h2>
+            <p style="color:var(--gray); font-size:1.2rem; margin:20px auto 40px; max-width:700px;">
+                Our master plumbers are on standby 24/7. Whether it's a minor leak or a major installation, we bring
+                precision and reliability to every job.
+            </p>
+            <div class="hero-cta-group" style="display: flex; gap: 20px; justify-content: center;">
+                <a href="contact.html" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
+                <a href="services.html" class="btn-outline">View Shield Plans</a>
             </div>
         </div>
     </section>
+
 
 
 

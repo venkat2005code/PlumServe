@@ -65,16 +65,7 @@
                 <button class="theme-btn" id="theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <ellipse cx="12" cy="12" rx="4" ry="10" />
-                        <line x1="2" y1="9" x2="22" y2="9" />
-                        <line x1="2" y1="15" x2="22" y2="15" />
-                    </svg>
-                    <span class="dir-label" id="dir-label">LTR</span>
-                </button>
+                <button class="dir-btn" id="dir-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR"><span class="dir-label">LTR</span></button>
                 <button class="hamburger" id="hamburger" aria-label="Open menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -103,13 +94,20 @@
                 <a href="dashboard-admin.html">Admin Hub</a>
             </div>
         </div>
+        <div class="mobile-nav-item mobile-toggles-container">
+            <button class="theme-btn mobile-toggle-btn" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i> Theme
+            </button>
+            <button class="dir-btn mobile-toggle-btn" aria-label="Toggle Direction"><span class="dir-label">LTR</span></button>
+        </div>
         <div class="mobile-nav-item"><a href="login.html" class="mobile-nav-link">Sign In</a></div>
         <div class="mobile-nav-item"><a href="signup.html" class="mobile-nav-link">Sign Up</a></div>
     </nav>
 
     <main>
         <!-- 1. Hero Section -->
-        <section class="services-hero immersive-hero" id="residential">
+        <section class="services-hero" id="residential">
+            <div class="hero-bg-kinetic"></div>
             <div class="hero-bg-overlay"></div>
             <div class="container hero-content">
                 <div class="reveal from-bottom">
@@ -225,96 +223,9 @@
         </section>
 
 
-        <!-- 8. Marquee -->
-        <section class="services-nutrition" id="marquee">
-            <div class="nutrition-marquee-wrapper">
-                <div class="marquee-content">
-                    <span>Licensed Master Plumbers</span> • <span>Eco-Flow Technology</span> •
-                    <span>99% Success Rate</span> •
-                    <span>Licensed Master Plumbers</span> • <span>Eco-Flow Technology</span> •
-                    <span>99% Success Rate</span>
-                </div>
-            </div>
-            <div class="container">
-                <div class="reveal from-bottom">
-                    <h2 class="section-title">Engineered for <span>Longevity</span></h2>
-                    <p>We don't just fix leaks; we build systems that stand the test of time.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- 9. Projects Gallery -->
-        <section class="services-venues" id="projects">
-            <div class="container">
-                <div class="venue-gallery reveal">
-                    <div class="venue-main">
-                        <img src="assets/images/freepik__plumber-cleaning-a-clogged-drain-pipe-in-a-bathroo__58421.png"
-                            alt="Institutional" />
-                        <div class="v-caption">Corporate Headquarters</div>
-                    </div>
-                    <div class="venue-thumbs">
-                        <img src="assets/images/freepik__professional-plumber-repairing-pipes-in-a-modern-h__58419.png"
-                            alt="Project 1" class="reveal reveal-delay-1" />
-                        <img src="assets/images/freepik__professional-plumber-installing-a-modern-water-hea__58422.png"
-                            alt="Project 2" class="reveal reveal-delay-2" />
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 10. Service Journey Timeline -->
-        <section class="services-events" id="journey">
-            <div class="container">
-                <div class="events-split">
-                    <div class="events-info">
-                        <h2 class="section-title">The <span>Service</span> Lifecycle</h2>
-                        <div class="event-path">
-                            <div class="event-checkpoint reveal">
-                                <span class="date">Phase 1</span>
-                                <h4>Rapid Dispatch</h4>
-                                <p>GPS-optimized routing for under 60m arrival.</p>
-                            </div>
-                            <div class="event-checkpoint reveal reveal-delay-1">
-                                <span class="date">Phase 2</span>
-                                <h4>Smart Diagnosis</h4>
-                                <p>Acoustic sensors map the hidden systems.</p>
-                            </div>
-                            <div class="event-checkpoint reveal reveal-delay-2">
-                                <span class="date">Phase 3</span>
-                                <h4>Resolution & Proof</h4>
-                                <p>Photo documentation of every master-grade fix.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="events-visual reveal from-right">
-                        <img src="assets/images/freepik__team-of-professional-plumbers-standing-together-wi__58425.png"
-                            alt="Service Journey" class="events-img" />
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 11. Custom Lab -->
-        <section class="services-apparel" id="blueprint">
-            <div class="container">
-                <div class="blueprint-canvas-wrapper reveal">
-                    <div class="blueprint-outline"></div>
-                    <div class="apparel-split">
-                        <div class="blueprint-content">
-                            <span class="section-tag">Blueprint Lab</span>
-                            <h2 class="section-title">Pre-Construction <span>Design</span></h2>
-                            <p>Architectural plumbing design for new builds and major renovations. We create detailed
-                                blueprints that optimize flow, minimize pressure loss, and ensure your building's
-                                infrastructure is future-proofed against demand spikes.</p>
-                        </div>
-                        <div class="apparel-visual reveal from-right">
-                            <img src="assets/images/freepik__professional-plumbing-tools-arranged-on-workbench-__58424.png"
-                                alt="Architectural Plan" class="side-img-box" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- 12. Premium Service Packs -->
         <section class="service-packs-section section-padding alt-bg" id="service-packs">
@@ -377,19 +288,6 @@
             </div>
         </section>
 
-        <!-- 13. Final CTA -->
-        <section class="services-cta" id="cta">
-            <div class="cta-mesh-bg"></div>
-            <div class="container">
-                <div class="reveal from-bottom">
-                    <h2>READY FOR PERMANENTS?</h2>
-                    <p>Stop the patches. Get a master-grade solution today.</p>
-                    <div style="margin-top: 40px;">
-                        <a href="contact.html" class="btn-primary">Initiate Contact Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- ══ FOOTER ══ -->
@@ -405,7 +303,7 @@
                 precision and reliability to every job.
             </p>
             <div class="hero-cta-group">
-                <a href="contact.html" class="btn-primary">📅 Book Now</a>
+                <a href="contact.html" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
                 <a href="services.html" class="btn-outline">View Shield Plans</a>
             </div>
         </div>

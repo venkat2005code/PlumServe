@@ -15,15 +15,17 @@
      1.  RTL / LTR  GLOBE TOGGLE
   ══════════════════════════════════════════ */
   const html = document.documentElement;
-  const globeBtn = qs('#globe-btn');
-  const dirLabel = qs('#dir-label');
+  const dirBtns = qsa('.dir-btn');
+  const dirLabels = qsa('.dir-label');
 
   let isRTL = localStorage.getItem('dir') === 'rtl';
 
   function applyDir(rtl) {
     isRTL = rtl;
     html.setAttribute('dir', rtl ? 'rtl' : 'ltr');
-    if (dirLabel) dirLabel.textContent = rtl ? 'RTL' : 'LTR';
+    dirLabels.forEach(label => {
+      label.textContent = rtl ? 'RTL' : 'LTR';
+    });
     localStorage.setItem('dir', rtl ? 'rtl' : 'ltr');
   }
 
@@ -67,10 +69,10 @@
 
   applyDir(isRTL);
 
-  if (globeBtn) {
-    globeBtn.addEventListener('click', () => applyDir(!isRTL));
-    globeBtn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') applyDir(!isRTL); });
-  }
+  dirBtns.forEach(btn => {
+    btn.addEventListener('click', () => applyDir(!isRTL));
+    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') applyDir(!isRTL); });
+  });
 
   /* ══════════════════════════════════════════
      2.  HEADER SCROLL BEHAVIOUR
@@ -545,7 +547,7 @@
     const input = qs('#newsletter-email');
     const btn = qs('#newsletter-submit');
     if (!input || !input.value.includes('@')) return;
-    btn.textContent = '✓ Subscribed!';
+    btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Subscribed!';
     btn.style.background = '#27ae60';
     setTimeout(() => {
       btn.textContent = 'Subscribe';

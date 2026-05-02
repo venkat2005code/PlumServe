@@ -29,7 +29,7 @@
             --logo-color-1: #0f172a;
             --logo-color-2: #334155;
         }
-        html[data-theme="light"] #header:not(.scrolled) .globe-btn,
+        html[data-theme="light"] #header:not(.scrolled) .dir-btn,
         html[data-theme="light"] #header:not(.scrolled) .theme-btn,
         html[data-theme="light"] #header:not(.scrolled) .hamburger {
             color: #0f172a !important;
@@ -344,6 +344,7 @@
         }
         @media(max-width: 600px){ .h2-testi-card { width: 320px; padding: 30px;} }
         .h2-testi-card p { font-size: 1.1rem; color: var(--off-white); font-style: italic; line-height: 1.6; }
+        .testi-stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 10px; display: flex; gap: 4px; }
         .h2-testi-author { display: flex; align-items: center; gap: 16px; }
         .h2-testi-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--gold); display: flex; align-items:center; justify-content:center; font-weight: bold; color: var(--navy); font-family: var(--font-heading); flex-shrink:0;}
         @keyframes h2-scroll-slow {
@@ -434,16 +435,7 @@
                 <button class="theme-btn" id="theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <ellipse cx="12" cy="12" rx="4" ry="10" />
-                        <line x1="2" y1="9" x2="22" y2="9" />
-                        <line x1="2" y1="15" x2="22" y2="15" />
-                    </svg>
-                    <span class="dir-label" id="dir-label">LTR</span>
-                </button>
+                <button class="dir-btn" id="dir-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR"><span class="dir-label">LTR</span></button>
                 <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
@@ -471,6 +463,12 @@
                 <a href="dashboard-user.html">User Dashboard</a>
                 <a href="dashboard-admin.html">Admin Dashboard</a>
             </div>
+        </div>
+        <div class="mobile-nav-item mobile-toggles-container">
+            <button class="theme-btn mobile-toggle-btn" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i> Theme
+            </button>
+            <button class="dir-btn mobile-toggle-btn" aria-label="Toggle Direction"><span class="dir-label">LTR</span></button>
         </div>
         <div class="mobile-nav-item"><a href="login.html" class="mobile-nav-link">Sign In</a></div>
         <div class="mobile-nav-item"><a href="signup.html" class="mobile-nav-link">Sign Up</a></div>
@@ -528,14 +526,14 @@
         <!-- === MARQUEE === -->
         <div class="h2-marquee-wrap">
             <div class="h2-marquee-content">
-                <div class="h2-marquee-item"><span>✦</span> 24/7 EMERGENCY RESPONSE</div>
-                <div class="h2-marquee-item"><span>✦</span> MASTER CERTIFIED</div>
-                <div class="h2-marquee-item"><span>✦</span> LIFETIME WARRANTY</div>
-                <div class="h2-marquee-item"><span>✦</span> UPFRONT PRICING</div>
-                <div class="h2-marquee-item"><span>✦</span> 24/7 EMERGENCY RESPONSE</div>
-                <div class="h2-marquee-item"><span>✦</span> MASTER CERTIFIED</div>
-                <div class="h2-marquee-item"><span>✦</span> LIFETIME WARRANTY</div>
-                <div class="h2-marquee-item"><span>✦</span> UPFRONT PRICING</div>
+                <div class="h2-marquee-item"><i class="fa-solid fa-star" style="font-size: 14px; color: var(--navy);"></i> 24/7 EMERGENCY RESPONSE</div>
+                <div class="h2-marquee-item"><i class="fa-solid fa-star" style="font-size: 14px; color: var(--navy);"></i> MASTER CERTIFIED</div>
+                <div class="h2-marquee-item"><i class="fa-solid fa-star" style="font-size: 14px; color: var(--navy);"></i> LIFETIME WARRANTY</div>
+                <div class="h2-marquee-item"><i class="fa-solid fa-star" style="font-size: 14px; color: var(--navy);"></i> UPFRONT PRICING</div>
+                <div class="h2-marquee-item"><i class="fa-solid fa-star" style="font-size: 14px; color: var(--navy);"></i> 24/7 EMERGENCY RESPONSE</div>
+                <div class="h2-marquee-item"><i class="fa-solid fa-star" style="font-size: 14px; color: var(--navy);"></i> MASTER CERTIFIED</div>
+                <div class="h2-marquee-item"><i class="fa-solid fa-star" style="font-size: 14px; color: var(--navy);"></i> LIFETIME WARRANTY</div>
+                <div class="h2-marquee-item"><i class="fa-solid fa-star" style="font-size: 14px; color: var(--navy);"></i> UPFRONT PRICING</div>
             </div>
         </div>
 
@@ -640,7 +638,7 @@
             <div class="h2-testi-track">
                 <!-- Group 1 -->
                 <div class="h2-testi-card">
-                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <div class="testi-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"The priority dispatch was phenomenal. A team arrived in 40 minutes for our flooded basement. Absolute lifesavers with unmatched professionalism and completely transparent pricing."</p>
                     <div class="h2-testi-author">
                         <div class="h2-testi-avatar">JD</div>
@@ -652,7 +650,7 @@
                 </div>
                 
                 <div class="h2-testi-card">
-                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <div class="testi-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"We transitioned our entire hotel chain's maintenance to PlumServe. Their acoustic leak detection saved us thousands in potential water damage and prevented invasive wall tear-downs."</p>
                     <div class="h2-testi-author">
                         <div class="h2-testi-avatar">AW</div>
@@ -664,7 +662,7 @@
                 </div>
                 
                 <div class="h2-testi-card">
-                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <div class="testi-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"They installed a new hybrid thermal system for us. The automated options made it easy to optimize energy usage. The installation looks like a spaceship engine room and runs flawlessly."</p>
                     <div class="h2-testi-author">
                         <div class="h2-testi-avatar">MK</div>
@@ -676,7 +674,7 @@
                 </div>
                 
                 <div class="h2-testi-card">
-                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <div class="testi-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Zero hidden fees. The transparent engineering step they do before starting work is something every contractor should adopt. Honest, elite service that respects the client's time."</p>
                     <div class="h2-testi-author">
                         <div class="h2-testi-avatar">EL</div>
@@ -689,7 +687,7 @@
                 
                 <!-- Group 2 (Duplicate for infinity scroll) -->
                 <div class="h2-testi-card">
-                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <div class="testi-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"The priority dispatch was phenomenal. A team arrived in 40 minutes for our flooded basement. Absolute lifesavers with unmatched professionalism and completely transparent pricing."</p>
                     <div class="h2-testi-author">
                         <div class="h2-testi-avatar">JD</div>
@@ -701,7 +699,7 @@
                 </div>
                 
                 <div class="h2-testi-card">
-                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <div class="testi-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"We transitioned our entire hotel chain's maintenance to PlumServe. Their acoustic leak detection saved us thousands in potential water damage and prevented invasive wall tear-downs."</p>
                     <div class="h2-testi-author">
                         <div class="h2-testi-avatar">AW</div>
@@ -713,7 +711,7 @@
                 </div>
                 
                 <div class="h2-testi-card">
-                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <div class="testi-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"They installed a new hybrid thermal system for us. The automated options made it easy to optimize energy usage. The installation looks like a spaceship engine room and runs flawlessly."</p>
                     <div class="h2-testi-author">
                         <div class="h2-testi-avatar">MK</div>
@@ -725,7 +723,7 @@
                 </div>
                 
                 <div class="h2-testi-card">
-                    <div style="color:var(--gold); font-size: 1.2rem; margin-bottom: 10px;">★★★★★</div>
+                    <div class="testi-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p>"Zero hidden fees. The transparent engineering step they do before starting work is something every contractor should adopt. Honest, elite service that respects the client's time."</p>
                     <div class="h2-testi-author">
                         <div class="h2-testi-avatar">EL</div>
@@ -747,7 +745,7 @@
                     Don't let a minor fracture become a structural disaster. Join thousands of property owners who trust PlumServe for permanent, precision-engineered solutions. Available 24/7 for absolute peace of mind.
                 </p>
                 <div class="hero-cta-group">
-                    <a href="contact.html" class="btn-primary">📅 Book Emergency Repair</a>
+                    <a href="contact.html" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Emergency Repair</a>
                     <a href="services.html" class="btn-outline">Browse Shield Plans</a>
                 </div>
             </div>

@@ -65,16 +65,7 @@
                 <button class="theme-btn" id="theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <ellipse cx="12" cy="12" rx="4" ry="10" />
-                        <line x1="2" y1="9" x2="22" y2="9" />
-                        <line x1="2" y1="15" x2="22" y2="15" />
-                    </svg>
-                    <span class="dir-label" id="dir-label">LTR</span>
-                </button>
+                <button class="dir-btn" id="dir-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR"><span class="dir-label">LTR</span></button>
                 <button class="hamburger" id="hamburger" aria-label="Open menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -103,13 +94,20 @@
                 <a href="dashboard-admin.html">Admin Hub</a>
             </div>
         </div>
+        <div class="mobile-nav-item mobile-toggles-container">
+            <button class="theme-btn mobile-toggle-btn" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i> Theme
+            </button>
+            <button class="dir-btn mobile-toggle-btn" aria-label="Toggle Direction"><span class="dir-label">LTR</span></button>
+        </div>
         <div class="mobile-nav-item"><a href="login.html" class="mobile-nav-link">Sign In</a></div>
         <div class="mobile-nav-item"><a href="signup.html" class="mobile-nav-link">Sign Up</a></div>
     </nav>
 
     <main>
         <!-- 1. Hero Section -->
-        <section class="about-hero hero-immersive" id="hero">
+        <section class="about-hero" id="hero">
+            <div class="hero-bg-animated"></div>
             <div class="hero-bg-overlay"></div>
             <div class="container hero-content">
                 <div class="reveal from-bottom">
@@ -125,10 +123,10 @@
             </div>
         </section>
 
-        <!-- 2. Mission Section -->
-        <section class="about-mission reveal" id="mission">
+        <!-- 2. Heritage Section (Merged Mission & Story) -->
+        <section class="about-heritage section-padding" id="heritage">
             <div class="container">
-                <div class="mission-panels">
+                <div class="mission-panels" style="margin-bottom: 80px;">
                     <div class="mission-panel reveal from-left">
                         <div class="panel-icon"><i class="fa-solid fa-bullseye" style="color:var(--gold)"></i></div>
                         <h3>Our Mission</h3>
@@ -142,19 +140,14 @@
                             vital needs of modern society.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- 2. Story Section -->
-        <section class="about-story" id="story">
-            <div class="container">
                 <div class="story-grid">
                     <div class="reveal from-left">
-                        <span class="section-tag">The Beginning</span>
+                        <span class="section-tag">The Legacy</span>
                         <h2 class="section-title">Built on <span>Excellence</span></h2>
                         <div class="gold-line" style="margin:0 0 24px;"></div>
                         <p class="section-desc">PlumServe began with a simple mission: to bring unparalleled precision
-                            to the plumbing industry. What started as a single van operation has grown into a
+                            to the plumbing industry. What started as a single van operation in 1995 has grown into a
                             nationwide network of master-certified professionals.</p>
                         <p class="section-desc">We don't just fix pipes; we engineer peace of mind for homeowners and
                             enterprises alike, utilizing the latest in non-invasive diagnostic technology.</p>
@@ -264,56 +257,7 @@
             </div>
         </section>
 
-        <!-- 6. Global Impact Section -->
-        <section class="about-impact" id="impact">
-            <div class="container">
-                <div class="impact-grid">
-                    <div class="impact-stats reveal">
-                        <div class="stat-item">
-                            <span class="stat-number">100k+</span>
-                            <p>Homes Protected</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5M+</span>
-                            <p>Gallons Saved</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">500+</span>
-                            <p>Certified Masters</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">24/7</span>
-                            <p>Response Shield</p>
-                        </div>
-                    </div>
-                    <div class="impact-content reveal from-right">
-                        <h3>Our Community Footprint</h3>
-                        <p>From historic residential districts to high-rise corporate towers, PlumServe is the trusted
-                            guardian of water integrity. Our massive service network ensures that elite technical
-                            support is accessible to everyone, everywhere.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 7. Lab Section (Scanline) -->
-        <section class="about-lab" id="lab">
-            <div class="lab-scanner-container">
-                <div class="lab-img-wrapper reveal">
-                    <img src="assets/images/freepik__emergency-plumber-repairing-burst-pipe-in-a-home-w__58423.png"
-                        alt="Testing Lab" />
-                    
-                </div>
-                <div class="lab-overlay-content container">
-                    <div class="reveal from-bottom">
-                        <span class="section-tag">Pressure Lab</span>
-                        <h2 class="section-title">Tested Under <span>Extreme</span> Conditions</h2>
-                        <p>Every fixture and sealant is scrutinized under laboratory pressure tests to ensure it meets
-                            our "Master Standard" before entering your home.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- 8. Awards Section -->
         <section class="about-awards" id="awards">
@@ -348,19 +292,6 @@
             </div>
         </section>
 
-        <!-- 9. Final CTA -->
-        <section class="about-cta" id="cta">
-            <div class="cta-gradient-bg"></div>
-            <div class="container">
-                <div class="reveal from-bottom">
-                    <h2>JOIN THE LEGACY?</h2>
-                    <p>Upgrade your home's infrastructure with the masters.</p>
-                    <div style="margin-top:40px;">
-                        <a href="contact.html" class="btn-primary">Connect With A Master</a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- ══ FOOTER ══ -->
@@ -376,7 +307,7 @@
                 complex challenges with precision.
             </p>
             <div class="hero-cta-group">
-                <a href="contact.html" class="btn-primary">📅 Book Consultation</a>
+                <a href="contact.html" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
                 <a href="services.html" class="btn-outline">Explore Capabilities</a>
             </div>
         </div>
