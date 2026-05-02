@@ -9444,7 +9444,6 @@ html[dir="rtl"] .user-info {
 }
 
 /* Fix contrast in Light Mode for transparent headers and dark hero backgrounds */
-html[data-theme="light"] #header,
 html[data-theme="light"] #hero,
 html[data-theme="light"] .hero-immersive,
 html[data-theme="light"] .about-hero,
@@ -9454,14 +9453,37 @@ html[data-theme="light"] .blueprint-canvas-wrapper,
 html[data-theme="light"] .auth-visual-side,
 html[data-theme="light"] .cat-content,
 html[data-theme="light"] .rental-overlay {
-    /* Keep text white on dark image backgrounds */
-    color: #ffffff;
+    /* Keep immersive sections dark even in light mode */
+    background: #081224 !important;
+    color: #ffffff !important;
     --white: #ffffff;
     --off-white: #f1f5f9;
     --gray: #94a3b8;
     --navy: #081224;
     --logo-color-1: #ffffff;
     --logo-color-2: #e2e8f0;
+}
+
+/* Default transparent header contrast in Light Mode (most pages have dark heroes) */
+html[data-theme="light"] #header:not(.scrolled) {
+    color: #ffffff;
+}
+
+html[data-theme="light"] #header:not(.scrolled) .nav-link:not(.nav-signup) {
+    color: #ffffff;
+}
+
+html[data-theme="light"] #header:not(.scrolled) .logo-text {
+    --logo-color-1: #ffffff;
+    --logo-color-2: #e2e8f0;
+}
+
+html[data-theme="light"] #header:not(.scrolled) .dir-btn,
+html[data-theme="light"] #header:not(.scrolled) .theme-btn,
+html[data-theme="light"] #header:not(.scrolled) .hamburger {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Ensure text inside these dark blocks actually inherits the white color */
@@ -9475,6 +9497,23 @@ html[data-theme="light"] .auth-visual-side *,
 html[data-theme="light"] .cat-content *,
 html[data-theme="light"] .rental-overlay * {
     color: inherit;
+}
+
+/* Specific button fixes for dark heroes in light mode */
+html[data-theme="light"] #hero .btn-outline,
+html[data-theme="light"] .hero-immersive .btn-outline,
+html[data-theme="light"] .about-hero .btn-outline,
+html[data-theme="light"] .services-hero .btn-outline,
+html[data-theme="light"] .contact-hero .btn-outline {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    background: transparent !important;
+}
+
+html[data-theme="light"] #hero .btn-outline:hover,
+html[data-theme="light"] .hero-immersive .btn-outline:hover {
+    background: #ffffff !important;
+    color: #081224 !important;
 }
 
 /* Revert specific elements that need their own color (like gold tags/spans) */

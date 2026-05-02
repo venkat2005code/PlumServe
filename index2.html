@@ -23,11 +23,11 @@
 
         /* Fix Navbar Contrast for Light Mode in Home 2 (since hero is light) */
         html[data-theme="light"] #header:not(.scrolled) .nav-link {
-            color: #0f172a;
+            color: #0f172a !important;
         }
         html[data-theme="light"] #header:not(.scrolled) .logo-text {
-            --logo-color-1: #0f172a;
-            --logo-color-2: #334155;
+            --logo-color-1: #0f172a !important;
+            --logo-color-2: #334155 !important;
         }
         html[data-theme="light"] #header:not(.scrolled) .dir-btn,
         html[data-theme="light"] #header:not(.scrolled) .theme-btn,
@@ -35,6 +35,30 @@
             color: #0f172a !important;
             background: rgba(0, 0, 0, 0.05) !important;
             border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Home 2 Light Mode Components Fix */
+        html[data-theme="light"] .h2-glass-panel {
+            background: #ffffff;
+            border-color: #e2e8f0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+        html[data-theme="light"] .h2-input-group input, 
+        html[data-theme="light"] .h2-input-group select {
+            background: #f1f5f9;
+            border-color: #e2e8f0;
+            color: #0f172a;
+        }
+        html[data-theme="light"] .h2-glass-btn,
+        html[data-theme="light"] .h2-marquee-item {
+            color: #081224 !important; /* Force dark text on gold background for contrast */
+        }
+        html[data-theme="light"] .h2-glass-panel h3 {
+            color: #0f172a;
+        }
+        html[data-theme="light"] .h2-glass-panel::before {
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.3;
         }
 
 
