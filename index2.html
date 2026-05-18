@@ -527,8 +527,11 @@
                             <select required aria-label="Service Required">
                                 <option value="" disabled selected>Select Service Required</option>
                                 <option value="emergency">Emergency Repair</option>
-                                <option value="install">System Installation</option>
-                                <option value="detect">Leak Detection</option>
+                                <option value="leak">Leak Detection</option>
+                                <option value="drain">Drain Cleaning</option>
+                                <option value="relining">Pipe Relining</option>
+                                <option value="heaters">Water Heaters</option>
+                                <option value="commercial">Commercial Plumbing</option>
                             </select>
                             <i class="fa-solid fa-chevron-down" style="position: absolute; right: 20px; top: 18px; color: var(--gold); pointer-events: none;"></i>
                         </div>
@@ -569,42 +572,63 @@
             </div>
             
             <div class="h2-bento-grid">
-                <!-- Large Item -->
-                <div class="h2-bento-card b-span-2x2 reveal">
-                    <img src="assets/images/freepik__professional-plumber-inspecting-water-leak-in-resi__58420.png" alt="Advanced Diagnostics">
+                <!-- Large Item 1: Commercial Plumbing -->
+                <div class="h2-bento-card b-span-2x2 reveal" id="commercial">
+                    <img src="assets/images/freepik__professional-plumber-repairing-pipes-in-a-modern-h__58419.png" alt="Commercial Plumbing">
                     <div class="h2-bento-card-content">
                         <div class="h2-bento-card-title">Commercial Infrastructure</div>
                         <p class="h2-bento-card-desc">High-capacity pumping stations, central heating circuits, and commercial-grade wastewater management designed for 99.9% uptime.</p>
-                        <a href="services.html" class="btn-outline" style="margin-top: 20px; padding: 10px 24px; font-size: 14px;">View Enterprise Specs</a>
+                        <a href="services.html#commercial" class="btn-outline" style="margin-top: 20px; padding: 10px 24px; font-size: 14px;">View Enterprise Specs</a>
                     </div>
                 </div>
-                
-                <!-- Normal Items -->
-                <div class="h2-bento-card reveal reveal-delay-1">
-                    <img src="assets/images/freepik__professional-plumber-installing-a-modern-water-hea__58422.png" alt="Water Heater">
+
+                <!-- Large Item 2: Emergency Repair -->
+                <div class="h2-bento-card b-span-2x2 reveal reveal-delay-1" id="emergency">
+                    <img src="assets/images/freepik__emergency-plumber-repairing-burst-pipe-in-a-home-w__58423.png" alt="Emergency Repair">
                     <div class="h2-bento-card-content">
-                        <div class="h2-bento-card-title">Thermal Systems</div>
-                        <p class="h2-bento-card-desc">Tankless hybrid water heaters and smart thermostats that reduce energy footprints.</p>
-                        <a href="services.html" class="btn-outline" style="margin-top: 10px; padding: 6px 16px; font-size: 12px;">Explore</a>
+                        <div class="h2-bento-card-title">Critical Response</div>
+                        <p class="h2-bento-card-desc">24/7 rapid response for industrial and residential emergencies, burst pipes, and sudden system failures.</p>
+                        <a href="services.html#emergency" class="btn-outline" style="margin-top: 20px; padding: 10px 24px; font-size: 14px;">Deploy Protocol</a>
                     </div>
                 </div>
                 
-                <div class="h2-bento-card reveal reveal-delay-2">
-                    <img src="assets/images/freepik__plumber-cleaning-a-clogged-drain-pipe-in-a-bathroo__58421.png" alt="Pipes">
+                <!-- Normal Item 3: Leak Detection -->
+                <div class="h2-bento-card reveal reveal-delay-2" id="leak">
+                    <img src="assets/images/freepik__professional-plumber-inspecting-water-leak-in-resi__58420.png" alt="Leak Detection">
                     <div class="h2-bento-card-content">
                         <div class="h2-bento-card-title">Acoustic Logic</div>
                         <p class="h2-bento-card-desc">Non-invasive leak detection using ultra-sensitive acoustic sensors pinpointing micro-fractures.</p>
-                        <a href="services.html" class="btn-outline" style="margin-top: 10px; padding: 6px 16px; font-size: 12px;">Explore</a>
+                        <a href="services.html#leak" class="btn-outline" style="margin-top: 10px; padding: 6px 16px; font-size: 12px;">Explore</a>
                     </div>
                 </div>
                 
-                <!-- Wide Item -->
-                <div class="h2-bento-card b-span-2x1 reveal reveal-delay-1">
-                    <img src="assets/images/freepik__professional-plumbing-tools-arranged-on-workbench-__58424.png" alt="Hydro Jetting">
+                <!-- Normal Item 4: Drain Cleaning -->
+                <div class="h2-bento-card reveal reveal-delay-3" id="drain">
+                    <img src="assets/images/freepik__plumber-cleaning-a-clogged-drain-pipe-in-a-bathroo__58421.png" alt="Drain Cleaning">
                     <div class="h2-bento-card-content">
-                        <div class="h2-bento-card-title">Pure-Flow Hydro Jetting</div>
-                        <p class="h2-bento-card-desc">High-pressure clearing for resilient drainage systems, eradicating 100% of pipeline blockages, root intrusions, and heavy calcification.</p>
-                        <a href="services.html" class="btn-outline" style="margin-top: 20px; padding: 10px 24px; font-size: 14px;">See It In Action</a>
+                        <div class="h2-bento-card-title">Pure-Flow Jetting</div>
+                        <p class="h2-bento-card-desc">High-pressure hydro-jetting to eradicate 100% of pipeline blockages and calcification.</p>
+                        <a href="services.html#drain" class="btn-outline" style="margin-top: 10px; padding: 6px 16px; font-size: 12px;">Explore</a>
+                    </div>
+                </div>
+
+                <!-- Normal Item 5: Pipe Relining -->
+                <div class="h2-bento-card reveal reveal-delay-4" id="relining">
+                    <img src="assets/images/freepik__professional-plumbing-tools-arranged-on-workbench-__58424.png" alt="Pipe Relining">
+                    <div class="h2-bento-card-content">
+                        <div class="h2-bento-card-title">Trenchless Relining</div>
+                        <p class="h2-bento-card-desc">Cured-in-place pipe (CIPP) trenchless restoration of main lines without excavation.</p>
+                        <a href="services.html#relining" class="btn-outline" style="margin-top: 10px; padding: 6px 16px; font-size: 12px;">Explore</a>
+                    </div>
+                </div>
+
+                <!-- Normal Item 6: Water Heaters -->
+                <div class="h2-bento-card reveal reveal-delay-5" id="heaters">
+                    <img src="assets/images/freepik__professional-plumber-installing-a-modern-water-hea__58422.png" alt="Water Heaters">
+                    <div class="h2-bento-card-content">
+                        <div class="h2-bento-card-title">Thermal Systems</div>
+                        <p class="h2-bento-card-desc">Tankless hybrid water heaters and smart thermostats that reduce energy footprints.</p>
+                        <a href="services.html#heaters" class="btn-outline" style="margin-top: 10px; padding: 6px 16px; font-size: 12px;">Explore</a>
                     </div>
                 </div>
             </div>
@@ -846,12 +870,12 @@
                 <div class="footer-col">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#">Emergency Repair</a></li>
-                        <li><a href="#">Leak Detection</a></li>
-                        <li><a href="#">Drain Cleaning</a></li>
-                        <li><a href="#">Pipe Relining</a></li>
-                        <li><a href="#">Water Heaters</a></li>
-                        <li><a href="#">Commercial</a></li>
+                        <li><a href="services.html#emergency">Emergency Repair</a></li>
+                        <li><a href="services.html#leak">Leak Detection</a></li>
+                        <li><a href="services.html#drain">Drain Cleaning</a></li>
+                        <li><a href="services.html#relining">Pipe Relining</a></li>
+                        <li><a href="services.html#heaters">Water Heaters</a></li>
+                        <li><a href="services.html#commercial">Commercial Plumbing</a></li>
                     </ul>
                 </div>
 
